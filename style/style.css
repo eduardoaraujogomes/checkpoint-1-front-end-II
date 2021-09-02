@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+main {
+    width: 100vw;
+    height: 100vh;    
+    border:  1px solid green;    
+}
+
+#container {
+    display: flex;
+    width:80%;
+    margin: 5rem auto;
+    border: 1px solid red;
+}
+
+/* Estilo do formulário */
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(85, 18, 241);    
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+/* Estilo dos cards do article */
+
+#card-container {
+    display: flex;
+    flex-direction: colum;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0.5rem;
+}
+
+#card-container .card img {
+    width: 600px;
+    
+}
+
+#card-container .card p {
+    max-width: 30rem;
+    
+}
+
