@@ -18,7 +18,7 @@ main {
 #container {
     display: flex;
     flex-flow: wrap;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
     width:90%;
     margin: 3rem auto;
@@ -29,10 +29,12 @@ main {
 form {
     display: flex;
     flex-direction: column;
-    background-color: #F5F3F4;    
+    background-color: #F5F3F4; 
+    width: 30rem;   
     margin: 0.5rem;
-    padding: 0.5rem;
+    padding: 2rem 3rem;
     border-radius: 0.5rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 form h1 {
@@ -71,11 +73,23 @@ button {
 
 #card-container {
     margin: 1rem 0.5rem;
+    max-width: 50rem;
+}
+
+#card-container .card {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 #card-container .card img {
     width: 90%;
     
+}
+
+#card-container .card h3 {
+    margin: 0.5rem 0;    
 }
 
 #card-container .card p {
