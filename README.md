@@ -13,11 +13,11 @@ Após o preenchimento, ao clicar no botão de submit, as informações devem ser
 Exemplo de formulário:
 
 ### Exemplo de Formulário
-[](https://i.imgur.com/v3fiuhN.png)
+![](https://i.imgur.com/v3fiuhN.png)
 
 
 ## CARDS:
 Os cards devem ter uma imagem e constar as informações previamente preenchidas no formulário. O comportamento se dará de forma que as informações preenchidas sejam exibidas nesta seção de cards.
 
 ### Exemplo de Card
-[](https://i.imgur.com/GJb548r.png)
+![](https://i.imgur.com/GJb548r.png)
