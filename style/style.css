@@ -1,20 +1,27 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
+    color: #435058;
 }
+
+body {
+    background-color: #F5F3F4;
+}
+
 main {
     width: 100vw;
-    height: 100vh;    
-    border:  1px solid green;    
+    height: 100vh;   
 }
 
 #container {
     display: flex;
-    width:80%;
-    margin: 5rem auto;
-    border: 1px solid red;
+    flex-flow: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    width:90%;
+    margin: 3rem auto;
 }
 
 /* Estilo do formulário */
@@ -22,29 +29,52 @@ main {
 form {
     display: flex;
     flex-direction: column;
-    background-color: rgb(85, 18, 241);    
+    background-color: #F5F3F4;    
     margin: 0.5rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
-form h2 {
+
+form h1 {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    color: #457A9A;
+    font-size: 1.8rem;
 }
+
+label {
+    color: #435058;
+}
+
+input, button {
+    margin: 0.5rem;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+}
+
+textarea {
+    border: none;
+    border-radius: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+button {
+    background-color: #9FC1D0;
+    font-size: 1.0rem;
+    margin-top: 1.5rem;
+}
+
 
 
 /* Estilo dos cards do article */
 
 #card-container {
-    display: flex;
-    flex-direction: colum;
-    justify-content: center;
-    align-items: center;
     margin: 1rem 0.5rem;
 }
 
 #card-container .card img {
-    width: 600px;
+    width: 90%;
     
 }
 
