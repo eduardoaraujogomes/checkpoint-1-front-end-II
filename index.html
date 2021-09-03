@@ -22,18 +22,18 @@
                 <form action="">
                     <h1>Adicionar Produtos</h1>
                     <label for="nomeProduto">Nome do Produto *</label>
-                    <input type="text" placeholder="">
+                    <input type="text" placeholder="" required>
                     <label for="codigoProduto">Código do Produto * </label>
-                    <input type="text" placeholder="">
+                    <input type="text" placeholder="" required>
                     <label for="tamanho">Tamanho *</label>
-                    <input type="text" placeholder="">
+                    <input type="text" placeholder="" required>
                     <label for="cor">Cor *</label>
-                    <input type="text" placeholder="">
+                    <input type="text" placeholder="" required>
                     <label for="preco">Preço *</label>
-                    <input type="text" placeholder="">
+                    <input type="number" placeholder="" required>
                     <label for="descricao">Descrição *</label>
                     <textarea name="descricao" id="descricao" cols="30"
-                        rows="10"></textarea>
+                        rows="10" required></textarea>
                     <button type="submit" class="btn enviar">Enviar</button>
                     <button type="reset" class="btn enviar">Limpar</button>
                 </form>
