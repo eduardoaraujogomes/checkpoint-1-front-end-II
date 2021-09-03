@@ -33,7 +33,7 @@ form {
     width: 30rem;   
     margin: 0.5rem;
     padding: 2rem 3rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
@@ -81,19 +81,37 @@ button {
     padding: 2rem;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+    display: grid;    
+    grid-template-columns: 10rem auto;
+    grid-template-rows: 1fr;
+    gap: 1rem; 
+    border-radius: 1rem;
 }
+
+
 
 #card-container .card img {
-    width: 90%;
-    
+    width: 60%;
+    border-radius: 1rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
-#card-container .card h3 {
+#card-container .card-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+}
+
+#card-container .card-div h3 {
     margin: 0.5rem 0;    
 }
 
-#card-container .card p {
-    max-width: 30rem;
-    
+#card-container .card-div p {
+    font-size: 0.8rem;
+}
+#card-container .card-div span {
+    font-weight: bolder;  
+    font-size: 1.1rem;
 }
 
