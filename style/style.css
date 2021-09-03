@@ -48,23 +48,41 @@ label {
     color: #435058;
 }
 
-input, button {
-    margin: 0.5rem;
+form input {
+    margin: 0.5rem 0;
     border: none;
     border-radius: 0.2rem;
-    padding: 0.8rem;
+    padding: 0.8rem;    
 }
 
-textarea {
+form textarea {
     border: none;
     border-radius: 0.2rem;
     margin-top: 0.5rem;
+    resize: none;
 }
 
-button {
+.btn {
     background-color: #9FC1D0;
-    font-size: 1.0rem;
-    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    width: 20rem;
+    align-self: center;
+    margin: 1.5rem 0.5rem 0.5rem 0.5rem;    
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem; 
+    border-radius: 1rem;
+    font-weight: bold;
+    text-transform: uppercase; 
+    color: white;
+    letter-spacing: 0.1rem;
+    border: 2px solid #9FC1D0;   
+}
+.btn[type="reset"] {
+    margin-top: 0.2rem;
+    background-color: white;
+    color: #9FC1D0;
+    border: 2px solid #9FC1D0;
 }
 
 
@@ -72,7 +90,7 @@ button {
 /* Estilo dos cards do article */
 
 #card-container {
-    margin: 1rem 0.5rem;
+    margin: 0.5rem;
     max-width: 50rem;
 }
 
@@ -87,11 +105,14 @@ button {
     gap: 1rem; 
     border-radius: 1rem;
 }
+#card-container .card:last-of-type {
+    margin-bottom: 0;
+}
 
 
 
 #card-container .card img {
-    width: 60%;
+    width: 6rem;
     border-radius: 1rem;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
@@ -115,3 +136,13 @@ button {
     font-size: 1.1rem;
 }
 
+
+#card-container  .adicionar{
+    margin-left: 2rem;     
+}
+
+@media (max-width: 768px) {
+   .btn{
+        width: 24rem;
+    }
+}
