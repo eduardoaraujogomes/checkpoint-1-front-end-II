@@ -1,36 +1,55 @@
-import { cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, btnEnviar } from "./script.js";
+import { cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect } from "./script.js";
 
+//V
+const unsplashURL = 'https://source.unsplash.com/random/';
 const formulario = document.getElementById("form");
 const cardsSection = document.getElementById("card-container");
 
-let objectCards = [];
+//variável para armazenar os valores dos cartôes criados
+let todosCartoes = [];
 
+//Função que vai funcionar quando clicar no botão de Adicionar
 formulario.addEventListener("submit", (event) => {
+    //Previne que o usuário envie o formulário com campos não preenchidos
     event.preventDefault();
-    //Adicionando os cards via JS
-    cardsSection.innerHTML += `<article class="card">
-    <img src="https://static5.minhalojanouol.com.br/tennisecia/produto/multifotos/hd/20190919163236_9089990911_DZ.jpg"
-        alt="">
-    <div class="card-div">
-        <h3>${cadNomeInput.value}</h3>
-        <p>Tamanho ${cadTamanhoSelect.value}</p>
-        <span>Preço: R$${cadPrecoInput.value}</span>
-    </div>
-    <div class="div-btn-circle">
-        <button class="btn-circle">+</button>
-    </div>
-</article>`;
-    objectCards.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput, descricao: cadDescricao });
 
-    for (const key in objectCards) {
-        if (Object.hasOwnProperty.call(objectCards, key)) {
-            console.log(objectCards[key]);
-        }
-    }
+    //Criando os cards
+    criarCard();
 
+    //Adicionando os valores no array de objetos para utilizar futuramente
+    todosCartoes.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput.value, descricao: cadDescricao.value });
+
+    //Resetando os valores dentro do formulário
     formulario.reset();
 });
 
+
+//função para criar os cartões
+function criarCard() {
+    cardsSection.innerHTML += `
+    <article class="card">
+        <img src="${unsplashURL}${tamanhosAleatorios()}"
+            alt="">
+        <div class="card-div">
+            <h3>${cadNomeInput.value}</h3>
+            <p>Tamanho ${cadTamanhoSelect.value}</p>
+            <span>Preço: R$${cadPrecoInput.value}</span>
+        </div>
+        <div class="div-btn-circle">
+            <button class="btn-circle">+</button>
+        </div>
+    </article>
+`;
+}
+
+
+function tamanhosAleatorios() {
+    return `${gerandoNumerosAleatorios()}x${gerandoNumerosAleatorios()}`;
+}
+
+function gerandoNumerosAleatorios() {
+    return Math.floor(Math.random() * 100) + 300;
+}
 
 
 

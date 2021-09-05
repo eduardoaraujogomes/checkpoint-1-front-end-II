@@ -80,4 +80,4 @@ cadPrecoInput.addEventListener("keyup", () => {
     }
 }); */
 
-export { cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricao, btnEnviar };
+export { cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricao };
