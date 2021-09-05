@@ -1,4 +1,4 @@
-import { cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect } from "./script.js";
+import { btnEnviar, cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar } from "./script.js";
 
 //V
 const unsplashURL = 'https://source.unsplash.com/random/';
@@ -9,18 +9,23 @@ const cardsSection = document.getElementById("card-container");
 let todosCartoes = [];
 
 //Função que vai funcionar quando clicar no botão de Adicionar
-formulario.addEventListener("submit", (event) => {
-    //Previne que o usuário envie o formulário com campos não preenchidos
-    event.preventDefault();
+btnEnviar.addEventListener("click", (event) => {
+    if (validaAdicionar) {
+        //Previne que o usuário envie o formulário com campos não preenchidos
+        event.preventDefault();
 
-    //Criando os cards
-    criarCard();
+        //Criando os cards
+        criarCard();
 
-    //Adicionando os valores no array de objetos para utilizar futuramente
-    todosCartoes.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput.value, descricao: cadDescricao.value });
+        //Adicionando os valores no array de objetos para utilizar futuramente
+        todosCartoes.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput.value, descricao: cadDescricao.value });
 
-    //Resetando os valores dentro do formulário
-    formulario.reset();
+        //Resetando os valores dentro do formulário
+        formulario.reset();
+
+        //Resetando o validador
+        validaAdicionar = false;
+    }else{}
 });
 
 

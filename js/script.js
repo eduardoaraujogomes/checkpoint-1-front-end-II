@@ -23,17 +23,17 @@ let cadDescricao = document.querySelector(".cadDescricao");
 let cadDescricaoInput = document.querySelector(".cadDescricaoInput");
 let validaDescricao = false;
 
-
+let validaAdicionar = false;
 let btnEnviar = document.querySelector("#btnEnviar");
 
 cadNomeInput.addEventListener("keyup", () => {
     if (cadNomeInput.value.length <= 2 || cadNomeInput.value.length > 20) {
-        cadNome.setAttribute('style', "color: red")
-        cadNome.innerHTML = "Nome do Produto *De 3 e 20 caracteres."
+        cadNome.setAttribute('style', "color: red");
+        cadNome.innerHTML = "Nome do Produto *De 3 e 20 caracteres.";
         validaNome = false;
     } else {
-        cadNome.setAttribute('style', "color: green")
-        cadNome.innerHTML = "Nome do Produto *"
+        cadNome.setAttribute('style', "color: green");
+        cadNome.innerHTML = "Nome do Produto *";
         validaNome = true;
     }
 });
@@ -77,7 +77,7 @@ cadCorInput.addEventListener("keyup", () => {
 cadPrecoInput.addEventListener("keyup", () => {
     if (cadPrecoInput.value.length <= 2 || cadPrecoInput.value.length > 10) {
         cadPreco.setAttribute('style', "color: red");
-        cadPreco.innerHTML = "Preço *De 3 e 10 caracteres.";
+        cadPreco.innerHTML = "Preço *De 3 e 10 digitos.";
         validaPreco = false;
     } else {
         cadPreco.setAttribute('style', "color: green");
@@ -103,7 +103,7 @@ cadPrecoInput.addEventListener("keyup", () => {
 
 btnEnviar.addEventListener("click", () => {
     if (validaNome && validaCodigo && validaTamanho && validaCor && validaPreco) {
-        let listaProduto = JSON.parse(localStorage.getItem("listaProduto") || '[]')
+        let listaProduto = JSON.parse(localStorage.getItem("listaProduto") || '[]');
 
         listaProduto.push(
             {
@@ -116,14 +116,25 @@ btnEnviar.addEventListener("click", () => {
             }
         )
 
-        localStorage.setItem("listaProduto", JSON.stringify(listaProduto))
+        localStorage.setItem("listaProduto", JSON.stringify(listaProduto));
 
+        cadNome.setAttribute('style', "color: var(--text-color)");
+        cadCodigo.setAttribute('style', "color: var(--text-color)");
+        cadTamanho.setAttribute('style', "color: var(--text-color)");
+        cadCor.setAttribute('style', "color: var(--text-color)");
+        cadPreco.setAttribute('style', "color: var(--text-color)");
 
+        validaAdicionar = true;
+        validaNome = false;
+        validaCodigo = false;
+        validaTamanho = false;
+        validaCor = false;
+        validaPreco = false;
 
-        alert("Enviando...");
     } else {
         alert("Confira os campos");
+        validaAdicionar = false;
     }
 });
 
-export { cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricao };
+export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricao, validaAdicionar };
