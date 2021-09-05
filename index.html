@@ -21,21 +21,47 @@
             <section id="container">
                 <form action="">
                     <h1>Adicionar Produtos</h1>
-                    <label for="nomeProduto">Nome do Produto *</label>
-                    <input type="text" class="nome" placeholder="" required>
-                    <label for="codigoProduto">Código do Produto * </label>
-                    <input type="text" placeholder="" required>
-                    <label for="tamanho">Tamanho *</label>
-                    <input type="text" placeholder="" required>
-                    <label for="cor">Cor *</label>
-                    <input type="text" placeholder="" required>
-                    <label for="preco">Preço *</label>
-                    <input type="number" placeholder="" required>
-                    <label for="descricao">Descrição *</label>
-                    <textarea name="descricao" id="descricao" cols="30"
+                    <label for="nomeProduto" class="cadNome">Nome do Produto *</label>
+                    <input type="text" class="cadNomeInput" placeholder="" required>
+
+                    <label for="codigoProduto" class="cadCodigo">Código do Produto * </label>
+                    <input type="number" class="cadCodigoInput" placeholder="" required>
+
+                    <label for="tamanho" class="cadTamanho">Tamanho *</label>
+                    <select class="cadTamanhoSelect" required>
+                        <option value="emBranco">Defina um tamanho.</option>
+                        <option value="PP">PP</option>
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                    </select>
+                    <!-- <input type="text" class="cadTamanhoInput" placeholder="" required> -->
+
+                    <label for="cor" class="cadCor">Cor *</label>
+                    <input type="text" class="cadCorInput" placeholder="" required>
+
+                    <label for="preco" class="cadPreco">Preço *</label>
+                    <input type="number" class="cadPrecoInput" placeholder="" required>
+
+                    <label for="descricao" class="cadDescricao">Descrição *</label>
+                    <textarea name="descricao" id="cadDescricaoInput" cols="30"
                         rows="10" required></textarea>
-                    <button type="submit" class="btn enviar">Enviar</button>
-                    <button type="reset" class="btn enviar">Limpar</button>
+
+                    <button type="submit" id="btnEnviar" class="btn Enviar">Enviar</button>
+                    <button type="reset" class="btn Limpar">Limpar</button>
                 </form>
                 <section id="card-container">
                     <article class="card">
