@@ -1,14 +1,13 @@
 import { cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, btnEnviar } from "./script.js";
 
 const formulario = document.getElementById("form");
-const btnLimpar = document.querySelector(".Limpar");
 const cardsSection = document.getElementById("card-container");
 
+let objectCards = [];
 
-btnLimpar.addEventListener("click", () => formulario.reset());
-
-
-btnEnviar.addEventListener("click", () => {
+formulario.addEventListener("submit", (event) => {
+    event.preventDefault();
+    //Adicionando os cards via JS
     cardsSection.innerHTML += `<article class="card">
     <img src="https://static5.minhalojanouol.com.br/tennisecia/produto/multifotos/hd/20190919163236_9089990911_DZ.jpg"
         alt="">
@@ -21,8 +20,17 @@ btnEnviar.addEventListener("click", () => {
         <button class="btn-circle">+</button>
     </div>
 </article>`;
+    objectCards.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput, descricao: cadDescricao });
+
+    for (const key in objectCards) {
+        if (Object.hasOwnProperty.call(objectCards, key)) {
+            console.log(objectCards[key]);
+        }
+    }
+
     formulario.reset();
 });
+
 
 
 
