@@ -19,7 +19,7 @@
     <body>
         <main>
             <section id="container">
-                <form action="">
+                <form action="" id="form">
                     <h1>Adicionar Produtos</h1>
                     <label for="nomeProduto" class="cadNome">Nome do Produto
                         *</label>
@@ -68,66 +68,18 @@
                         rows="10" required></textarea>
 
                     <button type="submit" id="btnEnviar"
-                        class="btn Enviar">Enviar</button>
+                        class="btn Enviar">Adicionar</button>
                     <button type="reset" class="btn Limpar">Limpar</button>
                 </form>
                 <section id="card-container">
-                    <article class="card">
-                        <img src="https://static5.minhalojanouol.com.br/tennisecia/produto/multifotos/hd/20190919163236_9089990911_DZ.jpg"
-                            alt="">
-                        <div class="card-div">
-                            <h3>Camiseta</h3>
-                            <p>Tamanho G</p>
-                            <span>Preço: R$250,00</span>
-                        </div>
-                        <div class="div-btn-circle">
-                            <button class="btn-circle">+</button>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="https://cdn.dooca.store/1387/products/img-9839-1.jpg?v=1612206492"
-                            alt="">
-                        <div class="card-div">
-                            <h3>Sapato</h3>
-                            <p>Tamanho 35</p>
-                            <span>Preço: R$330,00</span>
-                        </div>
-                        <div class="div-btn-circle">
-                            <button class="btn-circle">+</button>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="https://static5.minhalojanouol.com.br/tennisecia/produto/multifotos/hd/20190919163236_9089990911_DZ.jpg"
-                            alt="">
-                        <div class="card-div">
-                            <h3>Camiseta</h3>
-                            <p>Tamanho G</p>
-                            <span>Preço: R$250,00</span>
-                        </div>
-                        <div class="div-btn-circle">
-                            <button class="btn-circle">+</button>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="https://cdn.dooca.store/1387/products/img-9839-1.jpg?v=1612206492"
-                            alt="">
-                        <div class="card-div">
-                            <h3>Sapato</h3>
-                            <p>Tamanho 35</p>
-                            <span>Preço: R$330,00</span>
-                        </div>
-                        <div class="div-btn-circle">
-                            <button class="btn-circle">+</button>
-                        </div>
-                    </article>
-                
-                    <button type="submit"
-                        class="btn adicionar">Adicionar</button>
+                    <!--                     <button type="submit"
+                        class="btn adicionar">Adicionar</button> -->
                 </section>
             </section>
         </main>
 
-        <script src="js/script.js"></script>
+        <script src="/js/script.js" type="module"></script>
+        <script src="/js/cards.js" type="module"></script>
     </body>
 
 </html>
