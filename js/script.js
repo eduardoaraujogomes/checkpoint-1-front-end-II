@@ -36,7 +36,7 @@ cadNomeInput.addEventListener("keyup", () => {
         cadNome.innerHTML = "Nome do Produto *"
         validaNome = true;
     }
-})
+});
 
 cadCodigoInput.addEventListener("keyup", () => {
     if (cadCodigoInput.value.length <= 2 || cadCodigoInput.value.length > 10) {
@@ -48,7 +48,7 @@ cadCodigoInput.addEventListener("keyup", () => {
         cadCodigo.innerHTML = "Código do Produto *";
         validaCodigo = true;
     }
-})
+});
 
 cadTamanhoSelect.addEventListener("click", () => {
     if (cadTamanhoSelect.value == "emBranco") {
@@ -60,7 +60,7 @@ cadTamanhoSelect.addEventListener("click", () => {
         cadTamanho.innerHTML = "Tamanho *";
         validaTamanho = true;
     }
-})
+});
 
 cadCorInput.addEventListener("keyup", () => {
     if (cadCorInput.value.length <= 2 || cadCorInput.value.length > 20) {
@@ -72,7 +72,7 @@ cadCorInput.addEventListener("keyup", () => {
         cadCor.innerHTML = "Cor *";
         validaCor = true;
     }
-})
+});
 
 cadPrecoInput.addEventListener("keyup", () => {
     if (cadPrecoInput.value.length <= 2 || cadPrecoInput.value.length > 10) {
@@ -84,7 +84,7 @@ cadPrecoInput.addEventListener("keyup", () => {
         cadPreco.innerHTML = "Preço *";
         validaPreco = true;
     }
-})
+});
 
 // cadDescricaoInput.addEventListener("keyup", ()=> {
 //     if(cadDescricaoInput.value.length <= 2 ||cadDescricaoInput.value.length > 150){
@@ -124,4 +124,6 @@ btnEnviar.addEventListener("click", () => {
     } else {
         alert("Confira os campos");
     }
-})
+});
+
+export { cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricao };
