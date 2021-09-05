@@ -20,7 +20,7 @@ let cadPrecoInput = document.querySelector(".cadPrecoInput");
 let validaPreco = false;
 
 let cadDescricao = document.querySelector(".cadDescricao");
-let cadDescricaoInput = document.querySelector(".cadDescricaoInput");
+let cadDescricaoInput = document.querySelector("#cadDescricaoInput");
 let validaDescricao = false;
 
 let validaAdicionar = false;
@@ -50,7 +50,7 @@ cadCodigoInput.addEventListener("keyup", () => {
     }
 });
 
-cadTamanhoSelect.addEventListener("click", () => {
+cadTamanhoSelect.addEventListener("keyup", () => {
     if (cadTamanhoSelect.value == "emBranco") {
         cadTamanho.setAttribute('style', "color: red");
         cadTamanho.innerHTML = "Tamanho *Defina um tamanho.";
@@ -86,23 +86,23 @@ cadPrecoInput.addEventListener("keyup", () => {
     }
 });
 
-// cadDescricaoInput.addEventListener("keyup", ()=> {
-//     if(cadDescricaoInput.value.length <= 2 ||cadDescricaoInput.value.length > 150){
-//         cadDescricao.setAttribute('style', "color: red");
-//         cadDescricao.innerHTML ="Descrição *De 3 e 150 caracteres.";
-//         validaDescricaoe = 0;
-//     } else {
-//         cadDescricao.setAttribute('style', "color: green");
-//         cadDescricao.innerHTML ="Descrição *";
-//         validaDescricaoe = 1;
+cadDescricaoInput.addEventListener("keyup", ()=> {
+    if(cadDescricaoInput.value.length <= 2 ||cadDescricaoInput.value.length > 150){
+        cadDescricao.setAttribute('style', "color: red");
+        cadDescricao.innerHTML ="Descrição *De 3 e 150 caracteres.";
+        validaDescricao = false;
+    } else {
+        cadDescricao.setAttribute('style', "color: green");
+        cadDescricao.innerHTML ="Descrição *";
+        validaDescricao = true;
 
-//     }
-// })
+    }
+})
 
 
 
 btnEnviar.addEventListener("click", () => {
-    if (validaNome && validaCodigo && validaTamanho && validaCor && validaPreco) {
+    if (validaNome && validaCodigo && validaTamanho && validaCor && validaPreco && validaDescricao) {
         let listaProduto = JSON.parse(localStorage.getItem("listaProduto") || '[]');
 
         listaProduto.push(
@@ -130,6 +130,7 @@ btnEnviar.addEventListener("click", () => {
         validaTamanho = false;
         validaCor = false;
         validaPreco = false;
+        validaDescricao = false;
 
     } else {
         alert("Confira os campos");
