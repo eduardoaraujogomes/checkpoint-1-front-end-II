@@ -1,13 +1,30 @@
+:root {
+    --backgroud-color: #F5F3F4;
+    --backgroud-form-color: #F5F3F4;
+    --backgroud-btn-color: #9FC1D0;
+    --backgroud-btn-circle-color: #F5F3F4;
+    --backgroud-btn-circle-active-color: #457A9A;
+    --text-color: #435058;
+    --text-h1-color:#457A9A;
+    --text-btn-color: white;
+    --text-btn-reset-color:#9FC1D0;
+    --text-btn-circle-color:#457A9A;
+    --border-btn-color:#9FC1D0;
+    --borde-btn-circle-color: #457A9A;
+    --box-shadow-color: rgb(0 0 0 / 0.2);
+}
+
+
 * {
     padding: 0;
     margin: 0;
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
-    color: #435058;
+    color: var(--text-color);
 }
 
 body {
-    background-color: #F5F3F4;
+    background-color: var(--backgroud-color);
 }
 
 main {
@@ -29,23 +46,23 @@ main {
 form {
     display: flex;
     flex-direction: column;
-    background-color: #F5F3F4; 
+    background-color: var(--backgroud-form-color); 
     width: 30rem;   
     margin: 0.5rem;
     padding: 2rem 3rem;
     border-radius: 1rem;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    box-shadow: 0 3px 10px var(--box-shadow-color);
 }
 
 form h1 {
     text-align: center;
     margin-bottom: 3rem;
-    color: #457A9A;
+    color: var(--text-h1-color);
     font-size: 1.8rem;
 }
 
 label {
-    color: #435058;
+    color: var(--text-color);
 }
 
 form input {
@@ -63,7 +80,7 @@ form textarea {
 }
 
 .btn {
-    background-color: #9FC1D0;
+    background-color: var(--backgroud-btn-color);
     font-size: 1.2rem;
     width: 20rem;
     align-self: center;
@@ -74,16 +91,16 @@ form textarea {
     border-radius: 1rem;
     font-weight: bold;
     text-transform: uppercase; 
-    color: white;
+    color: var(--text-btn-color);
     letter-spacing: 0.1rem;
-    border: 2px solid #9FC1D0;  
+    border: 2px solid var(--border-btn-color);  
     cursor: pointer; 
 }
 .btn[type="reset"] {
     margin-top: 0.2rem;
-    background-color: white;
-    color: #9FC1D0;
-    border: 2px solid #9FC1D0;
+    background-color: var(--text-btn-color);
+    color: var(--text-btn-reset-color);
+    border: 2px solid var(--border-btn-color);
 }
 
 /* Estilo dos cards do article */
@@ -94,14 +111,12 @@ form textarea {
 }
 
 #card-container .card {
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    box-shadow: 0 3px 10px var(--box-shadow-color);
     padding: 2rem;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
-    display: grid;    
-    grid-template-columns: 10rem auto;
-    grid-template-rows: 1fr;
-    gap: 1rem; 
+    display: flex;
+    gap: 2.0rem; 
     border-radius: 1rem;
 }
 #card-container .card:last-of-type {
@@ -109,14 +124,13 @@ form textarea {
 }
 
 
-
 #card-container .card img {
     width: 6rem;
     border-radius: 1rem;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    box-shadow: 0 3px 10px var(--box-shadow-color);
 }
 
-#card-container .card-div {
+#card-container .card-div{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -133,6 +147,34 @@ form textarea {
 #card-container .card-div span {
     font-weight: bolder;  
     font-size: 1.1rem;
+}
+
+/* Circular button */
+
+.div-btn-circle {
+    justify-content: flex-end;
+}
+
+.btn-circle {
+    width: 1.875rem;
+    height: 1.875rem;
+    border: 1px solid;
+    background-color: var(--backgroud-btn-circle-color);
+    color: var(--text-btn-circle-color);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.0rem;
+    cursor: pointer;
+    transition: .4s;
+}
+
+/* Active para mobile - colocar hover para desktop */
+.btn-circle:active {
+    color: var(--text-btn-color);
+    background-color: var(--backgroud-btn-circle-active-color);
+    border: 2.5px solid var(--borde-btn-circle-color);
+    transform: scale(1.2);
+    font-size: 1.2rem;
 }
 
 
