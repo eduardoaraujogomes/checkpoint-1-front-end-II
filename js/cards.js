@@ -1,4 +1,4 @@
-import { btnEnviar, cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar } from "./script.js";
+import { btnEnviar, cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar} from "./script.js";
 
 //V
 const unsplashURL = 'https://source.unsplash.com/random/';
@@ -55,8 +55,6 @@ function tamanhosAleatorios() {
 function gerandoNumerosAleatorios() {
     return Math.floor(Math.random() * 100) + 300;
 }
-
-
 
 
 
