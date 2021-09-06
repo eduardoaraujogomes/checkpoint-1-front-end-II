@@ -38,7 +38,11 @@ cadNomeInput.addEventListener("focusout", () => {
         cadNome.setAttribute('style', "color: red");
         cadNome.innerHTML = "Nome do Produto *De 3 e 20 caracteres.";
         validaNome = false;
-    } else {
+    }
+});
+   
+cadNomeInput.addEventListener("keyup", () => {
+    if (cadNomeInput.value.length > 2 && cadNomeInput.value.length < 21) {
         cadNome.setAttribute('style', "color: green");
         cadNome.innerHTML = "Nome do Produto *";
         validaNome = true;
@@ -51,7 +55,11 @@ cadCodigoInput.addEventListener("focusout", () => {
         cadCodigo.setAttribute('style', "color: red");
         cadCodigo.innerHTML = "Código do Produto *De 3 e 10 digitos.";
         validaCodigo = false;
-    } else {
+    }
+}); 
+    
+cadCodigoInput.addEventListener("keyup", () => {
+    if (cadCodigoInput.value.length > 2 && cadCodigoInput.value.length < 11) {
         cadCodigo.setAttribute('style', "color: green");
         cadCodigo.innerHTML = "Código do Produto *";
         validaCodigo = true;
@@ -64,7 +72,19 @@ cadTamanhoSelect.addEventListener("focusout", () => {
         cadTamanho.setAttribute('style', "color: red");
         cadTamanho.innerHTML = "Tamanho *Defina um tamanho.";
         validaTamanho = false;
-    } else {
+    }
+});
+    
+cadTamanhoSelect.addEventListener("keyup", () => {
+    if (cadTamanhoSelect.value != "emBranco") {
+        cadTamanho.setAttribute('style', "color: green");
+        cadTamanho.innerHTML = "Tamanho *";
+        validaTamanho = true;
+    }
+});
+
+cadTamanhoSelect.addEventListener("click", () => {
+    if (cadTamanhoSelect.value != "emBranco") {
         cadTamanho.setAttribute('style', "color: green");
         cadTamanho.innerHTML = "Tamanho *";
         validaTamanho = true;
@@ -77,7 +97,11 @@ cadCorInput.addEventListener("focusout", () => {
         cadCor.setAttribute('style', "color: red");
         cadCor.innerHTML = "Cor *De 3 e 20 caracteres.";
         validaCor = false;
-    } else {
+    }
+});
+
+cadCorInput.addEventListener("keyup", () => {
+    if (cadCorInput.value.length > 2 && cadCorInput.value.length < 21) {
         cadCor.setAttribute('style', "color: green");
         cadCor.innerHTML = "Cor *";
         validaCor = true;
@@ -90,7 +114,11 @@ cadPrecoInput.addEventListener("focusout", () => {
         cadPreco.setAttribute('style', "color: red");
         cadPreco.innerHTML = "Preço *De 3 e 10 digitos.";
         validaPreco = false;
-    } else {
+    }
+}); 
+    
+cadPrecoInput.addEventListener("keyup", () => {
+    if (cadPrecoInput.value.length > 2 && cadPrecoInput.value.length < 11) {
         cadPreco.setAttribute('style', "color: green");
         cadPreco.innerHTML = "Preço *";
         validaPreco = true;
@@ -103,7 +131,11 @@ cadDescricaoInput.addEventListener("focusout", () => {
         cadDescricao.setAttribute('style', "color: red");
         cadDescricao.innerHTML = "Descrição *De 3 e 150 caracteres.";
         validaDescricao = false;
-    } else {
+    }
+});
+
+cadDescricaoInput.addEventListener("keyup", () => {
+    if (cadDescricaoInput.value.length > 2 && cadDescricaoInput.value.length < 151) {
         cadDescricao.setAttribute('style', "color: green");
         cadDescricao.innerHTML = "Descrição *";
         validaDescricao = true;
@@ -141,6 +173,7 @@ btnEnviar.addEventListener("click", () => {
         cadTamanho.setAttribute('style', "color: var(--text-color)");
         cadCor.setAttribute('style', "color: var(--text-color)");
         cadPreco.setAttribute('style', "color: var(--text-color)");
+        cadDescricao.setAttribute('style', "color: var(--text-color)");
 
         //Atribui valor para a variável de validação que vai liberar a criação do card.
         validaAdicionar = true;
