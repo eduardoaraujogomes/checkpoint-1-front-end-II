@@ -189,6 +189,16 @@ input[type="number"] {
     font-weight: bolder;  
     font-size: 1.1rem;
 }
+#card-container .card-div .descricao {
+    max-width: 10rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#card-container .card-div .descricao:hover {
+    text-overflow: initial;
+    max-width: fit-content;
+}
 
 /* Circular button */
 

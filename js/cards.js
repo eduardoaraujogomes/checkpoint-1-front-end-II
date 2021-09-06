@@ -1,4 +1,4 @@
-import { btnEnviar, cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
+import { btnEnviar, cadCodigoInput, cadDescricaoInput, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
 
 //V
 const formulario = document.getElementById("form");
@@ -17,7 +17,7 @@ btnEnviar.addEventListener("click", (event) => {
         criarCard();
 
         //Adicionando os valores no array de objetos para utilizar futuramente
-        todosCartoes.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput.value, url: cadUrlInput.value, descricao: cadDescricao.value });
+        todosCartoes.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput.value, url: cadUrlInput.value, descricao: cadDescricaoInput.value });
 
         //Resetando os valores dentro do formulário
         formulario.reset();
@@ -35,6 +35,7 @@ function criarCard() {
             <h3>${cadNomeInput.value}</h3>
             <p>Tamanho ${cadTamanhoSelect.value}</p>
             <span>Preço: R$${cadPrecoInput.value}</span>
+            <p class="descricao">${cadDescricaoInput.value}</p>
         </div>
         <div class="div-btn-circle">
             <button class="btn-circle">+</button>

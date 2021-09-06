@@ -168,4 +168,4 @@ btnEnviar.addEventListener("click", () => {
     }
 });
 
-export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricao, validaAdicionar, cadUrlInput };
+export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricaoInput, validaAdicionar, cadUrlInput };
