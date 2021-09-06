@@ -28,7 +28,7 @@ let validaAdicionar = false;
 let btnEnviar = document.querySelector("#btnEnviar");
 
 //validando campo nome.
-cadNomeInput.addEventListener("keyup", () => {
+cadNomeInput.addEventListener("focusout", () => {
     if (cadNomeInput.value.length <= 2 || cadNomeInput.value.length > 20) {
         cadNome.setAttribute('style', "color: red");
         cadNome.innerHTML = "Nome do Produto *De 3 e 20 caracteres.";
@@ -41,7 +41,7 @@ cadNomeInput.addEventListener("keyup", () => {
 });
 
 //validando campo codigo.
-cadCodigoInput.addEventListener("keyup", () => {
+cadCodigoInput.addEventListener("focusout", () => {
     if (cadCodigoInput.value.length <= 2 || cadCodigoInput.value.length > 10) {
         cadCodigo.setAttribute('style', "color: red");
         cadCodigo.innerHTML = "Código do Produto *De 3 e 10 digitos.";
@@ -54,7 +54,7 @@ cadCodigoInput.addEventListener("keyup", () => {
 });
 
 //validando campo tamanho.
-cadTamanhoSelect.addEventListener("keyup", () => {
+cadTamanhoSelect.addEventListener("focusout", () => {
     if (cadTamanhoSelect.value == "emBranco") {
         cadTamanho.setAttribute('style', "color: red");
         cadTamanho.innerHTML = "Tamanho *Defina um tamanho.";
@@ -67,7 +67,7 @@ cadTamanhoSelect.addEventListener("keyup", () => {
 });
 
 //validando campo cor.
-cadCorInput.addEventListener("keyup", () => {
+cadCorInput.addEventListener("focusout", () => {
     if (cadCorInput.value.length <= 2 || cadCorInput.value.length > 20) {
         cadCor.setAttribute('style', "color: red");
         cadCor.innerHTML = "Cor *De 3 e 20 caracteres.";
@@ -80,7 +80,7 @@ cadCorInput.addEventListener("keyup", () => {
 });
 
 //validando campo preço.
-cadPrecoInput.addEventListener("keyup", () => {
+cadPrecoInput.addEventListener("focusout", () => {
     if (cadPrecoInput.value.length <= 2 || cadPrecoInput.value.length > 10) {
         cadPreco.setAttribute('style', "color: red");
         cadPreco.innerHTML = "Preço *De 3 e 10 digitos.";
@@ -93,14 +93,14 @@ cadPrecoInput.addEventListener("keyup", () => {
 });
 
 //validando campo descrição.
-cadDescricaoInput.addEventListener("keyup", ()=> {
-    if(cadDescricaoInput.value.length <= 2 ||cadDescricaoInput.value.length > 150){
+cadDescricaoInput.addEventListener("focusout", () => {
+    if (cadDescricaoInput.value.length <= 2 || cadDescricaoInput.value.length > 150) {
         cadDescricao.setAttribute('style', "color: red");
-        cadDescricao.innerHTML ="Descrição *De 3 e 150 caracteres.";
+        cadDescricao.innerHTML = "Descrição *De 3 e 150 caracteres.";
         validaDescricao = false;
     } else {
         cadDescricao.setAttribute('style', "color: green");
-        cadDescricao.innerHTML ="Descrição *";
+        cadDescricao.innerHTML = "Descrição *";
         validaDescricao = true;
 
     }
@@ -109,8 +109,9 @@ cadDescricaoInput.addEventListener("keyup", ()=> {
 
 //Ação de validação quando apertar o botão adicionar.
 btnEnviar.addEventListener("click", () => {
+
     if (validaNome && validaCodigo && validaTamanho && validaCor && validaPreco && validaDescricao) {
-        
+
         //Atribui um array quando a variavel não existir no localStorage, caso contrario converte o arquivo JSON e armazena no array.
         let listaProduto = JSON.parse(localStorage.getItem("listaProduto") || '[]');
 
@@ -125,7 +126,7 @@ btnEnviar.addEventListener("click", () => {
                 descricao: cadDescricaoInput.value
             }
         )
-        
+
         //Vai criar a chave (nome do arquivo) e valor (arquivo JSON), caso já exista vai atualizar.
         localStorage.setItem("listaProduto", JSON.stringify(listaProduto));
 
@@ -138,7 +139,7 @@ btnEnviar.addEventListener("click", () => {
 
         //Atribui valor para a variável de validação que vai liberar a criação do card.
         validaAdicionar = true;
-        
+
         //Reseta as variáveis de validação.
         validaNome = false;
         validaCodigo = false;
@@ -151,6 +152,14 @@ btnEnviar.addEventListener("click", () => {
     } else {
         alert("Confira os campos");
         validaAdicionar = false;
+        
+        //Da foco em todos os inputs para ativar as validação.
+        cadNomeInput.focus();
+        cadCodigoInput.focus();
+        cadTamanhoSelect.focus();
+        cadCorInput.focus();
+        cadPrecoInput.focus();
+        cadDescricaoInput.focus();
     }
 });
 
