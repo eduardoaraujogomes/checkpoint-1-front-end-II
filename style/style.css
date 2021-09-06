@@ -69,7 +69,8 @@ form input {
     margin: 0.5rem 0;
     border: none;
     border-radius: 0.2rem;
-    padding: 0.8rem;   
+    padding: 0.8rem;
+    font-size: 1.0rem;  
 }
 
 form textarea {
@@ -78,6 +79,46 @@ form textarea {
     margin-top: 0.5rem;
     resize: none;
 }
+
+
+/* ESTILO DO SELECT */
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: white;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    font-size: 1.0rem;
+    /* Estilo da seta do select */
+    background-image:
+        linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+/* ESTILO DOS INPUT [TYPE:"NUMBER] - SEM OS CONTADORES */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 
 .btn {
     background-color: var(--backgroud-btn-color);
