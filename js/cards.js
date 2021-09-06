@@ -23,8 +23,6 @@ btnEnviar.addEventListener("click", (event) => {
         //Resetando os valores dentro do formulário
         formulario.reset();
 
-        //Resetando o validador
-        validaAdicionar = false;
     }else{}
 });
 
