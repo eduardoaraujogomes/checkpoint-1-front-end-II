@@ -31,6 +31,7 @@ let validaDescricao = false;
 //criando variáveis para validar o envio e selecionando o botão adicionar.
 let validaAdicionar = false;
 let btnEnviar = document.querySelector("#btnEnviar");
+const formulario = document.getElementById("form");
 
 //validando campo nome.
 cadNomeInput.addEventListener("focusout", () => {
@@ -145,7 +146,7 @@ cadDescricaoInput.addEventListener("keyup", () => {
 
 
 //Ação de validação quando apertar o botão adicionar.
-btnEnviar.addEventListener("click", () => {
+formulario.addEventListener("submit", () => {
 
     if (validaNome && validaCodigo && validaTamanho && validaCor && validaPreco && validaDescricao) {
 
@@ -197,8 +198,9 @@ btnEnviar.addEventListener("click", () => {
         cadTamanhoSelect.focus();
         cadCorInput.focus();
         cadPrecoInput.focus();
+        cadUrlInput.focus();
         cadDescricaoInput.focus();
     }
 });
 
-export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricaoInput, validaAdicionar, cadUrlInput };
+export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricaoInput, validaAdicionar, cadUrlInput, formulario };

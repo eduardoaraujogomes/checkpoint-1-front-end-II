@@ -1,18 +1,17 @@
-import { btnEnviar, cadCodigoInput, cadDescricaoInput, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
+import { formulario, cadCodigoInput, cadDescricaoInput, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
 
 //V
-const formulario = document.getElementById("form");
+
 const cardsSection = document.getElementById("card-container");
 
 //variável para armazenar os valores dos cartôes criados
 let todosCartoes = [];
 
 //Função que vai funcionar quando clicar no botão de Adicionar
-btnEnviar.addEventListener("click", (event) => {
+formulario.addEventListener("submit", (event) => {
+    //Tira o comportamento padrão do botão submit de atualizar a página
+    event.preventDefault();
     if (validaAdicionar) {
-        //Previne que o usuário envie o formulário com campos não preenchidos
-        event.preventDefault();
-
         //Criando os cards
         criarCard();
 
