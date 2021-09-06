@@ -1,7 +1,6 @@
-import { btnEnviar, cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar} from "./script.js";
+import { btnEnviar, cadCodigoInput, cadDescricao, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
 
 //V
-const unsplashURL = 'https://source.unsplash.com/random/';
 const formulario = document.getElementById("form");
 const cardsSection = document.getElementById("card-container");
 
@@ -18,12 +17,11 @@ btnEnviar.addEventListener("click", (event) => {
         criarCard();
 
         //Adicionando os valores no array de objetos para utilizar futuramente
-        todosCartoes.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput.value, descricao: cadDescricao.value });
+        todosCartoes.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput.value, url: cadUrlInput.value, descricao: cadDescricao.value });
 
         //Resetando os valores dentro do formulário
         formulario.reset();
-
-    }else{}
+    }
 });
 
 
@@ -31,7 +29,7 @@ btnEnviar.addEventListener("click", (event) => {
 function criarCard() {
     cardsSection.innerHTML += `
     <article class="card">
-        <img src="${unsplashURL}${tamanhosAleatorios()}"
+        <img src="${cadUrlInput.value}"
             alt="">
         <div class="card-div">
             <h3>${cadNomeInput.value}</h3>
@@ -45,14 +43,6 @@ function criarCard() {
 `;
 }
 
-
-function tamanhosAleatorios() {
-    return `${gerandoNumerosAleatorios()}x${gerandoNumerosAleatorios()}`;
-}
-
-function gerandoNumerosAleatorios() {
-    return Math.floor(Math.random() * 100) + 300;
-}
 
 
 

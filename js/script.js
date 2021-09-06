@@ -19,6 +19,11 @@ let cadPreco = document.querySelector(".cadPreco");
 let cadPrecoInput = document.querySelector(".cadPrecoInput");
 let validaPreco = false;
 
+/* ESSE DAQUI É O DA URL, FALTA TRATAR ELE  */
+let cadUrl = document.querySelector(".cadUrl");
+let cadUrlInput = document.querySelector(".cadUrlInput");
+let validaUrl = false;
+
 let cadDescricao = document.querySelector(".cadDescricao");
 let cadDescricaoInput = document.querySelector("#cadDescricaoInput");
 let validaDescricao = false;
@@ -104,7 +109,7 @@ cadDescricaoInput.addEventListener("focusout", () => {
         validaDescricao = true;
 
     }
-})
+});
 
 
 //Ação de validação quando apertar o botão adicionar.
@@ -125,7 +130,7 @@ btnEnviar.addEventListener("click", () => {
                 preco: cadPrecoInput.value,
                 descricao: cadDescricaoInput.value
             }
-        )
+        );
 
         //Vai criar a chave (nome do arquivo) e valor (arquivo JSON), caso já exista vai atualizar.
         localStorage.setItem("listaProduto", JSON.stringify(listaProduto));
@@ -152,7 +157,7 @@ btnEnviar.addEventListener("click", () => {
     } else {
         alert("Confira os campos");
         validaAdicionar = false;
-        
+
         //Da foco em todos os inputs para ativar as validação.
         cadNomeInput.focus();
         cadCodigoInput.focus();
@@ -163,4 +168,4 @@ btnEnviar.addEventListener("click", () => {
     }
 });
 
-export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricao, validaAdicionar };
+export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricao, validaAdicionar, cadUrlInput };
