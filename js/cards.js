@@ -39,12 +39,44 @@ function criarCard() {
         <div class="div-btn-circle">
             <button class="btn-circle">+</button>
         </div>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class ="descricao">${cadDescricaoInput.value}</p>
+                <button class="btn-deletar">Deletar Card</button>
+            </div>
+        </div>
     </article>
 `;
+
+// **** MODAL *****
+
+let modal = document.querySelector(".modal");
+let btnCircle = document.querySelector(".btn-circle");
+let span = document.querySelector(".close");
+let btnDeletar = document.querySelector(".btn-deletar")
+
+btnCircle.onclick = function() {
+  modal.style.display = "block";
 }
 
+span.onclick = function() {
+  modal.style.display = "none";
+}
 
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
+btnDeletar.onclick = function() {
+    let card = document.querySelector(".card");
+    card.remove();
+}
 
+// É necessário colocar o modal em todos os cards que serão criados. A criação só está funcionando no primeiro card criado.
+
+}
 
 
