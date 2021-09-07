@@ -48,35 +48,55 @@ function criarCard() {
         </div>
     </article>
 `;
+    modalsFunctions();
 
-// **** MODAL *****
-
-let modal = document.querySelector(".modal");
-let btnCircle = document.querySelector(".btn-circle");
-let span = document.querySelector(".close");
-let btnDeletar = document.querySelector(".btn-deletar")
-
-btnCircle.onclick = function() {
-  modal.style.display = "block";
 }
 
-span.onclick = function() {
-  modal.style.display = "none";
-}
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+function modalsFunctions() {
 
-btnDeletar.onclick = function() {
-    let card = document.querySelector(".card");
-    card.remove();
-}
+    //Variáveis criadas para receberem toods os modais e seus valores
 
-// É necessário colocar o modal em todos os cards que serão criados. A criação só está funcionando no primeiro card criado.
+    let modals = document.querySelectorAll(".modal");
+    let btnsCircle = document.querySelectorAll(".btn-circle");
+    let spans = document.querySelectorAll(".close");
+    let btnsDeletar = document.querySelectorAll(".btn-deletar");
+    let cards = document.querySelectorAll(".card");
 
+
+    //Looping para poder pegar todos os nós dos modais criados
+
+    for (let i = 0;i < cards.length;i++) {
+
+        let btnCircle = btnsCircle[i];
+        let btnDeleter = btnsDeletar[i];
+        let modal = modals[i];
+        let span = spans[i];
+        let card = cards[i];
+
+
+
+        //função para abrir o modal
+        btnCircle.addEventListener('click', () => {
+            modal.style.display = "block";
+        });
+
+        //função para deletar o card
+        btnDeleter.addEventListener('click', () => {
+            card.remove();
+        });
+
+        //função para fechar o modal
+        span.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    }
 }
 
 
