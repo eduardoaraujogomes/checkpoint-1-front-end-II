@@ -273,11 +273,8 @@ input[type="number"] {
     max-width: 10rem;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 1rem;
     overflow: hidden;
-}
-#card-container .card-div .descricao:hover {
-    text-overflow: initial;
-    max-width: fit-content;
 }
 
 

@@ -27,7 +27,7 @@
                     <h1>Adicionar Produtos</h1>
                     <label for="nomeProduto" class="cadNome">Nome do Produto
                         *</label>
-                    <input type="text" class="cadNomeInput" placeholder="">
+                    <input type="text" class="cadNomeInput" placeholder="" maxlength="20">
 
                     <label for="codigoProduto" class="cadCodigo">Código do
                         Produto * </label>
@@ -57,11 +57,11 @@
                     <!-- <input type="text" class="cadTamanhoInput" placeholder="" required> -->
 
                     <label for="cor" class="cadCor">Cor *</label>
-                    <input type="text" class="cadCorInput" placeholder="">
+                    <input type="text" class="cadCorInput" placeholder="" maxlength="20">
 
                     <label for="preco" class="cadPreco">Preço *</label>
                     <input type="number" step="0.01" min="0.01"
-                        class="cadPrecoInput" placeholder="0,00">
+                        class="cadPrecoInput" placeholder="0,00" max="10">
 
                     <!-- ADIÇÃO DO CAMPO PARA A URL -->
                     <label for="url" class="cadUrl">Url da Imagem *</label>
@@ -71,7 +71,7 @@
                     <label for="descricao" class="cadDescricao">Descrição
                         *</label>
                     <textarea name="descricao" id="cadDescricaoInput" cols="30"
-                        rows="10"></textarea>
+                        rows="10" maxlength="150"></textarea>
 
                     <button type="submit" id="btnEnviar"
                         class="btn Enviar">Adicionar</button>
