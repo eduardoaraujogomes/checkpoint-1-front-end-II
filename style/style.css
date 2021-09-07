@@ -13,9 +13,24 @@
     --borde-btn-circle-color: #457A9A;
     --box-shadow-color: rgb(0 0 0 / 0.2);
 }
+/* Paleta de cores do modo noturno*/
+.modo-noite:root {
+    --backgroud-color: #0c0c0c;
+    --backgroud-form-color: #32010F;
+    --backgroud-btn-color: #9FC1D0;
+    --backgroud-btn-circle-color: #979495;
+    --backgroud-btn-circle-active-color: #457A9A;
+    --text-color: #CB013B;
+    --text-h1-color:#CB013B;
+    --text-btn-color: #97022C;
+    --text-btn-reset-color:gray;
+    --text-btn-circle-color:gray;
+    --border-btn-color:#9FC1D0;
+    --borde-btn-circle-color: #457A9A;
+    --box-shadow-color: rgb(0 0 0 / 0.2);
+}
 
-
-* {
+* {     
     padding: 0;
     margin: 0;
     font-family: "Roboto", sans-serif;
@@ -32,13 +47,77 @@ main {
     height: 100vh;   
 }
 
-#container {
+#container{
     display: flex;
     flex-flow: wrap;
     align-items: flex-start;
     justify-content: center;
     width:90%;
     margin: 3rem auto;
+}
+
+/* Botão modo noturno */
+
+.switch_container {
+    margin: 30px 100px;
+    width: 50px;
+}
+  
+.switch {
+    visibility: hidden;
+    position: absolute;
+    margin-left: -9999px;
+}
+  
+.switch + label {
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+ 
+/* Estilo do botao */
+.switch-botao + label {
+    padding: 2px;
+    width: 80px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50px;
+    transition: background 0.4s;
+}
+.switch-botao + label:before,
+.switch-botao + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+
+/* Animaçao do botao*/
+.switch-botao + label:before {
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    background-color: rgba(145, 9, 9, 0.616);
+    border-radius: 60px;
+    transition: background 0.4s;
+}
+.switch-botao + label:after {
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    width: 34px;
+    background-color: whitesmoke;
+    border-radius: 52px;
+    transition: margin 0.4s, background 0.4s;
+}
+.switch-botao:checked + label {
+    background-color: white;
+}
+.switch-botao:checked + label:after {
+    margin-left: 38px;
+    background-color: #64021E;
 }
 
 /* Estilo do formulário */
