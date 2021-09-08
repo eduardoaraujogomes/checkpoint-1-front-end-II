@@ -112,7 +112,6 @@ function modalsFunctions() {
 
     for (let i = 0;i < cards.length;i++) {
 
-        console.log(listaProdutos[i]);
         let btnCircle = btnsCircle[i];
         let btnDeleter = btnsDeletar[i];
         let modal = modals[i];
@@ -127,6 +126,7 @@ function modalsFunctions() {
         //função para deletar o card
         btnDeleter.addEventListener('click', () => {
             card.remove();
+            listaProdutos.splice(i, 1);
             localStorage.setItem("listaProduto", JSON.stringify(listaProdutos));
         });
 
