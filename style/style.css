@@ -59,7 +59,9 @@ main {
 /* Botão modo noturno */
 
 .switch_container {
-    margin: 30px 100px;
+    position: absolute;
+    top: 5px;
+    left: 50px;
     width: 50px;
 }
   
@@ -259,7 +261,12 @@ input[type="number"] {
 }
 
 #card-container .card-div h3 {
-    margin: 0.5rem 0;    
+    margin: 0.5rem 0;  
+    max-width: 10rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1rem;
+    overflow: hidden;  
 }
 
 #card-container .card-div p {

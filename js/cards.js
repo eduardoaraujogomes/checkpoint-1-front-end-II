@@ -1,11 +1,13 @@
 import { formulario, cadCodigoInput, cadDescricaoInput, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
 
 //V
-
+let listaProdutos;
+let cadUrlImg = document.querySelector(".cadUrlInput");
+listaProdutos = JSON.parse(localStorage.getItem("listaProduto") || '[]');
 const cardsSection = document.getElementById("card-container");
 
 //variável para armazenar os valores dos cartôes criados
-let todosCartoes = [];
+
 
 //Função que vai funcionar quando clicar no botão de Adicionar
 formulario.addEventListener("submit", (event) => {
@@ -13,10 +15,23 @@ formulario.addEventListener("submit", (event) => {
     event.preventDefault();
     if (validaAdicionar) {
         //Criando os cards
+
         criarCard();
 
-        //Adicionando os valores no array de objetos para utilizar futuramente
-        todosCartoes.push({ titulo: cadNomeInput.value, codigo: cadCodigoInput.value, tamanho: cadTamanhoSelect.value, cor: cadCorInput.value, preco: cadPrecoInput.value, url: cadUrlInput.value, descricao: cadDescricaoInput.value });
+        listaProdutos.push(
+            {
+                nome: cadNomeInput.value,
+                codigo: cadCodigoInput.value,
+                tamanho: cadTamanhoSelect.value,
+                cor: cadCorInput.value,
+                preco: cadPrecoInput.value,
+                imagem: cadUrlImg.value,
+                descricao: cadDescricaoInput.value
+            }
+        );
+
+        localStorage.setItem("listaProduto", JSON.stringify(listaProdutos));
+
 
         //Resetando os valores dentro do formulário
         formulario.reset();
@@ -52,6 +67,35 @@ function criarCard() {
 
 }
 
+window.onload = function () {
+    listaProdutos.map(value => {
+        cardsSection.innerHTML += `
+        <article class="card">
+            <img src="${value.imagem}"
+                alt="">
+            <div class="card-div">
+                <h3>${value.nome}</h3>
+                <p>Tamanho ${value.tamanho}</p>
+                <span>Preço: R$${value.preco}</span>
+                <p class="descricao">${value.descricao}</p>
+            </div>
+            <div class="div-btn-circle">
+                <button class="btn-circle">+</button>
+            </div>
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p class ="descricao">${value.descricao}</p>
+                    <button class="btn-deletar">Deletar Card</button>
+                </div>
+            </div>
+        </article>`;
+        modalsFunctions();
+    });
+
+};
+
+
 
 function modalsFunctions() {
 
@@ -68,13 +112,12 @@ function modalsFunctions() {
 
     for (let i = 0;i < cards.length;i++) {
 
+        console.log(listaProdutos[i]);
         let btnCircle = btnsCircle[i];
         let btnDeleter = btnsDeletar[i];
         let modal = modals[i];
         let span = spans[i];
         let card = cards[i];
-
-
 
         //função para abrir o modal
         btnCircle.addEventListener('click', () => {
@@ -84,6 +127,7 @@ function modalsFunctions() {
         //função para deletar o card
         btnDeleter.addEventListener('click', () => {
             card.remove();
+            localStorage.setItem("listaProduto", JSON.stringify(listaProdutos));
         });
 
         //função para fechar o modal

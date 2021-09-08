@@ -1,3 +1,4 @@
+
 //Criando variáveis para validação dos campos.
 let cadNome = document.querySelector(".cadNome");
 let cadNomeInput = document.querySelector(".cadNomeInput");
@@ -41,7 +42,7 @@ cadNomeInput.addEventListener("focusout", () => {
         validaNome = false;
     }
 });
-   
+
 cadNomeInput.addEventListener("keyup", () => {
     if (cadNomeInput.value.length > 2 && cadNomeInput.value.length < 21) {
         cadNome.setAttribute('style', "color: green");
@@ -57,8 +58,8 @@ cadCodigoInput.addEventListener("focusout", () => {
         cadCodigo.innerHTML = "Código do Produto *De 3 e 10 digitos.";
         validaCodigo = false;
     }
-}); 
-    
+});
+
 cadCodigoInput.addEventListener("keyup", () => {
     if (cadCodigoInput.value.length > 2 && cadCodigoInput.value.length < 11) {
         cadCodigo.setAttribute('style', "color: green");
@@ -75,7 +76,7 @@ cadTamanhoSelect.addEventListener("focusout", () => {
         validaTamanho = false;
     }
 });
-    
+
 cadTamanhoSelect.addEventListener("keyup", () => {
     if (cadTamanhoSelect.value != "emBranco") {
         cadTamanho.setAttribute('style', "color: green");
@@ -116,8 +117,8 @@ cadPrecoInput.addEventListener("focusout", () => {
         cadPreco.innerHTML = "Preço *De 3 e 10 digitos.";
         validaPreco = false;
     }
-}); 
-    
+});
+
 cadPrecoInput.addEventListener("keyup", () => {
     if (cadPrecoInput.value.length > 2 && cadPrecoInput.value.length < 11) {
         cadPreco.setAttribute('style', "color: green");
@@ -151,22 +152,13 @@ formulario.addEventListener("submit", () => {
     if (validaNome && validaCodigo && validaTamanho && validaCor && validaPreco && validaDescricao) {
 
         //Atribui um array quando a variavel não existir no localStorage, caso contrario converte o arquivo JSON e armazena no array.
-        let listaProduto = JSON.parse(localStorage.getItem("listaProduto") || '[]');
+
 
         //Transforma os dados do Input em um objeto e adiciona ao array listaProduto.
-        listaProduto.push(
-            {
-                nome: cadNomeInput.value,
-                codigo: cadCodigoInput.value,
-                tamanho: cadTamanhoSelect.value,
-                cor: cadCorInput.value,
-                preco: cadPrecoInput.value,
-                descricao: cadDescricaoInput.value
-            }
-        );
+
 
         //Vai criar a chave (nome do arquivo) e valor (arquivo JSON), caso já exista vai atualizar.
-        localStorage.setItem("listaProduto", JSON.stringify(listaProduto));
+
 
         //Vai atrivuir a cor padrão ao texto do formulario.
         cadNome.setAttribute('style', "color: var(--text-color)");
