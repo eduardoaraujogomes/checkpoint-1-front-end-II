@@ -1,10 +1,11 @@
 import { formulario, cadCodigoInput, cadDescricaoInput, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
 
-//V
-let listaProdutos;
-let cadUrlImg = document.querySelector(".cadUrlInput");
-listaProdutos = JSON.parse(localStorage.getItem("listaProduto") || '[]');
+
+
 const cardsSection = document.getElementById("card-container");
+//se tiver valores no localStorage ele pega esses valores, se não tiver, ele seta um array vazio.
+let listaProdutos = JSON.parse(localStorage.getItem("listaProduto") || '[]');
+
 
 //variável para armazenar os valores dos cartôes criados
 
@@ -14,10 +15,8 @@ formulario.addEventListener("submit", (event) => {
     //Tira o comportamento padrão do botão submit de atualizar a página
     event.preventDefault();
     if (validaAdicionar) {
-        //Criando os cards
 
-        criarCard();
-
+        //Array de valores dos cards
         listaProdutos.push(
             {
                 nome: cadNomeInput.value,
@@ -25,11 +24,14 @@ formulario.addEventListener("submit", (event) => {
                 tamanho: cadTamanhoSelect.value,
                 cor: cadCorInput.value,
                 preco: cadPrecoInput.value,
-                imagem: cadUrlImg.value,
+                imagem: cadUrlInput.value,
                 descricao: cadDescricaoInput.value
             }
         );
+        //cria o card com os valores passado no formulário
+        criarCard(cadNomeInput.value, cadCodigoInput.value, cadTamanhoSelect.value, cadCorInput.value, cadPrecoInput.value, cadUrlInput.value, cadDescricaoInput.value);
 
+        //Seta os valores do listaProdutos no localStorage
         localStorage.setItem("listaProduto", JSON.stringify(listaProdutos));
 
 
@@ -40,16 +42,16 @@ formulario.addEventListener("submit", (event) => {
 
 
 //função para criar os cartões
-function criarCard() {
+function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
     cardsSection.innerHTML += `
     <article class="card">
-        <img src="${cadUrlInput.value}"
+        <img src="${imagem}"
             alt="">
         <div class="card-div">
-            <h3>${cadNomeInput.value}</h3>
-            <p>Tamanho ${cadTamanhoSelect.value}</p>
-            <span>Preço: R$${cadPrecoInput.value}</span>
-            <p class="descricao">${cadDescricaoInput.value}</p>
+            <h3>${nome}</h3>
+            <p>Tamanho ${tamanho}</p>
+            <span>Preço: R$${preco}</span>
+            <p class="descricao">${descricao}</p>
         </div>
         <div class="div-btn-circle">
             <button class="btn-circle">+</button>
@@ -57,7 +59,7 @@ function criarCard() {
         <div class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p class ="descricao">${cadDescricaoInput.value}</p>
+                <p class ="descricao">${descricao}</p>
                 <button class="btn-deletar">Deletar Card</button>
             </div>
         </div>
@@ -67,36 +69,17 @@ function criarCard() {
 
 }
 
-window.onload = function () {
-    listaProdutos.map(value => {
-        cardsSection.innerHTML += `
-        <article class="card">
-            <img src="${value.imagem}"
-                alt="">
-            <div class="card-div">
-                <h3>${value.nome}</h3>
-                <p>Tamanho ${value.tamanho}</p>
-                <span>Preço: R$${value.preco}</span>
-                <p class="descricao">${value.descricao}</p>
-            </div>
-            <div class="div-btn-circle">
-                <button class="btn-circle">+</button>
-            </div>
-            <div class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p class ="descricao">${value.descricao}</p>
-                    <button class="btn-deletar">Deletar Card</button>
-                </div>
-            </div>
-        </article>`;
-        modalsFunctions();
-    });
 
+//Função para chamar os cards armazenados no localStorage, quando o usuário der f5 ou fechar e abrir a página
+window.onload = function () {
+    //Percorre todos os itens e valores do objeto e cria os cartões com ele
+    listaProdutos.map(value => {
+        criarCard(value.nome, value.codigo, value.tamanho, value.cor, value.preco, value.imagem, value.descricao);
+    });
 };
 
 
-
+// Função do modal
 function modalsFunctions() {
 
     //Variáveis criadas para receberem toods os modais e seus valores
@@ -123,7 +106,7 @@ function modalsFunctions() {
             modal.style.display = "block";
         });
 
-        //função para deletar o card
+        //função para deletar o card 
         btnDeleter.addEventListener('click', () => {
             card.remove();
             listaProdutos.splice(i, 1);
