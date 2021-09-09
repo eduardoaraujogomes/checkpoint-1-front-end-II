@@ -59,6 +59,11 @@ function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
         <div class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
+                <img src="${imagem}"
+                alt="">
+                <h3>${nome}</h3>
+                <p>Tamanho ${tamanho}</p>
+                <span>Preço: R$${preco}</span>
                 <p class ="descricao">${descricao}</p>
                 <button class="btn-deletar">Deletar Card</button>
             </div>
