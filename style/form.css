@@ -1,0 +1,110 @@
+/* Estilo do formulário */
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--principal-background);
+    width: 30rem;
+    margin: 0.5rem;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 3px 10px var(--box-shadow-color);
+}
+
+.modo-noite form {
+    background-color: #212121;
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--principal-btn);
+    font-size: 1.8rem;
+}
+
+label {
+    color: var(--text-color);
+}
+
+form input {
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    font-size: 1.0rem;
+}
+
+form textarea {
+    border: none;
+    border-radius: 0.2rem;
+    margin-top: 0.5rem;
+    resize: none;
+    font-size: 1.0rem;
+}
+
+.modo-noite input, textarea{
+    background-color: var(--text-btn);
+}
+
+/* ESTILO DO SELECT */
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: white;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    font-size: 1.0rem;
+    /* Estilo da seta do select */
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+/* ESTILO DOS INPUT [TYPE:"NUMBER] - SEM OS CONTADORES */
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.btn {
+    background-color: var(--principal-btn);
+    font-size: 1.2rem;
+    width: 20rem;
+    align-self: center;
+    margin: 1.5rem 0.5rem 0.5rem 0.5rem;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--text-btn);
+    letter-spacing: 0.1rem;
+    border: 2px solid var(--principal-btn);
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: var(--hover-principal);
+}
+
+.btn[type="reset"] {
+    margin-top: 0.2rem;
+    background-color: var(--text-btn);
+    color: var(--principal-btn);
+    border: 2px solid var(--principal-btn);
+}
+
+.btn[type="reset"]:hover{
+    background-color: var(--hover-light);
+}
