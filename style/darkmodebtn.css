@@ -1,0 +1,66 @@
+/* Botão modo noturno */
+
+.switch_container {
+    
+}
+
+.switch {
+    visibility: hidden;
+    position: absolute;
+    margin-left: -9999px;
+}
+
+.switch+label {
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+/* Estilo do botao */
+
+.switch-botao+label {
+    padding: 2px;
+    width: 80px;
+    height: 40px;
+    background-color: var(--text-color);
+    border-radius: 50px;
+    transition: background 0.4s;
+}
+
+.switch-botao+label:before, .switch-botao+label:after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+
+/* Animaçao do botao*/
+
+.switch-botao+label:before {
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    background-color: var(--text-color);
+    border-radius: 60px;
+    transition: background 0.4s;
+}
+
+.switch-botao+label:after {
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    width: 34px;
+    background-color: whitesmoke;
+    border-radius: 52px;
+    transition: margin 0.4s, background 0.4s;
+}
+
+.switch-botao:checked+label {
+    background-color: var(--principal-background);
+}
+
+.switch-botao:checked+label:after {
+    margin-left: 38px;
+    background-color: var(--principal-background);
+}

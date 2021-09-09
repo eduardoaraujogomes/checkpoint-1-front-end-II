@@ -1,0 +1,48 @@
+/* header e navbar */
+
+ul {
+    list-style: none;
+}
+  
+a {
+    text-decoration: none;
+}
+
+header {
+   background-color: var(--principal-btn);
+}
+
+.modo-noite header{
+    background-color: var(--principal-section);
+}
+  
+.menu {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.menu a img {
+    width: 4rem;
+}
+  
+.menu-nav ul {
+    display: flex; 
+    flex-wrap: wrap;
+}
+  
+.menu-nav a {
+    display: block;
+    padding: 1rem;
+    color: var(--text-btn);
+}
+
+.menu-nav a:hover {
+    color: var(--hover-light);
+}
+
+.modo-noite .menu-nav a:hover {
+    color: var(--circle-btn);
+}
