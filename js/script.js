@@ -167,7 +167,7 @@ formulario.addEventListener("submit", () => {
 
         //Vai criar a chave (nome do arquivo) e valor (arquivo JSON), caso já exista vai atualizar.
         localStorage.setItem("listaProduto", JSON.stringify(listaProduto));
-
+        
         //Vai atrivuir a cor padrão ao texto do formulario.
         cadNome.setAttribute('style', "color: var(--text-color)");
         cadCodigo.setAttribute('style', "color: var(--text-color)");
