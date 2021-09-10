@@ -36,7 +36,7 @@ const formulario = document.getElementById("form");
 
 //validando campo nome.
 cadNomeInput.addEventListener("focusout", () => {
-    if (cadNomeInput.value.length <= 2 || cadNomeInput.value.length > 20) {
+    if (cadNomeInput.value.length <= 2) {
         cadNome.setAttribute('style', "color: red");
         cadNome.innerHTML = "Nome do Produto *De 3 e 20 caracteres.";
         validaNome = false;
@@ -44,7 +44,7 @@ cadNomeInput.addEventListener("focusout", () => {
 });
 
 cadNomeInput.addEventListener("keyup", () => {
-    if (cadNomeInput.value.length > 2 && cadNomeInput.value.length < 21) {
+    if (cadNomeInput.value.length > 2) {
         cadNome.setAttribute('style', "color: green");
         cadNome.innerHTML = "Nome do Produto *";
         validaNome = true;
@@ -95,7 +95,7 @@ cadTamanhoSelect.addEventListener("click", () => {
 
 //validando campo cor.
 cadCorInput.addEventListener("focusout", () => {
-    if (cadCorInput.value.length <= 2 || cadCorInput.value.length > 20) {
+    if (cadCorInput.value.length <= 2) {
         cadCor.setAttribute('style', "color: red");
         cadCor.innerHTML = "Cor *De 3 e 20 caracteres.";
         validaCor = false;
@@ -103,7 +103,7 @@ cadCorInput.addEventListener("focusout", () => {
 });
 
 cadCorInput.addEventListener("keyup", () => {
-    if (cadCorInput.value.length > 2 && cadCorInput.value.length < 21) {
+    if (cadCorInput.value.length > 2) {
         cadCor.setAttribute('style', "color: green");
         cadCor.innerHTML = "Cor *";
         validaCor = true;
@@ -112,7 +112,7 @@ cadCorInput.addEventListener("keyup", () => {
 
 //validando campo preço.
 cadPrecoInput.addEventListener("focusout", () => {
-    if (cadPrecoInput.value.length <= 2 || cadPrecoInput.value.length > 10) {
+    if (cadPrecoInput.value.length <= 2) {
         cadPreco.setAttribute('style', "color: red");
         cadPreco.innerHTML = "Preço *De 3 e 10 digitos.";
         validaPreco = false;
@@ -120,7 +120,7 @@ cadPrecoInput.addEventListener("focusout", () => {
 });
 
 cadPrecoInput.addEventListener("keyup", () => {
-    if (cadPrecoInput.value.length > 2 && cadPrecoInput.value.length < 11) {
+    if (cadPrecoInput.value.length > 2) {
         cadPreco.setAttribute('style', "color: green");
         cadPreco.innerHTML = "Preço *";
         validaPreco = true;
@@ -129,7 +129,7 @@ cadPrecoInput.addEventListener("keyup", () => {
 
 //validando campo descrição.
 cadDescricaoInput.addEventListener("focusout", () => {
-    if (cadDescricaoInput.value.length <= 2 || cadDescricaoInput.value.length > 150) {
+    if (cadDescricaoInput.value.length <= 2) {
         cadDescricao.setAttribute('style', "color: red");
         cadDescricao.innerHTML = "Descrição *De 3 e 150 caracteres.";
         validaDescricao = false;
@@ -137,7 +137,7 @@ cadDescricaoInput.addEventListener("focusout", () => {
 });
 
 cadDescricaoInput.addEventListener("keyup", () => {
-    if (cadDescricaoInput.value.length > 2 && cadDescricaoInput.value.length < 151) {
+    if (cadDescricaoInput.value.length > 2) {
         cadDescricao.setAttribute('style', "color: green");
         cadDescricao.innerHTML = "Descrição *";
         validaDescricao = true;
