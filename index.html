@@ -41,15 +41,14 @@
         <section id="container">
             <form action="" id="form">
                 <h1>Adicionar Produtos</h1>
-                <label for="nomeProduto" class="cadNome">Nome do Produto
-                    *</label>
+                <label for="nomeProduto" class="cadNome">Nome do Produto*</label>
                 <input type="text" class="cadNomeInput" placeholder="" maxlength="20">
 
                 <label for="codigoProduto" class="cadCodigo">Código do
-                    Produto * </label>
+                    Produto*</label>
                 <input type="number" class="cadCodigoInput" placeholder="" min="1">
 
-                <label for="tamanho" class="cadTamanho">Tamanho *</label>
+                <label for="tamanho" class="cadTamanho">Tamanho*</label>
                 <select class="cadTamanhoSelect">
                     <option value="emBranco">Defina um tamanho.</option>
                     <option value="PP">PP</option>
@@ -72,21 +71,20 @@
                 </select>
                 <!-- <input type="text" class="cadTamanhoInput" placeholder="" required> -->
 
-                <label for="cor" class="cadCor">Cor *</label>
+                <label for="cor" class="cadCor">Cor*</label>
                 <input type="text" class="cadCorInput" placeholder="" maxlength="20">
 
-                <label for="preco" class="cadPreco">Preço *</label>
-                <input type="text" class="cadPrecoInput" placeholder="R$ 0,00" maxlength="13">
+                <label for="preco" class="cadPreco">Preço*</label>
+                <input type="number" class="cadPrecoInput" placeholder="0,00">
                 
                 <!-- step="0.01" min="0.01" -->
 
                 <!-- ADIÇÃO DO CAMPO PARA A URL -->
-                <label for="url" class="cadUrl">Url da Imagem *</label>
+                <label for="url" class="cadUrl">Url da Imagem*</label>
                 <input type="url" class="cadUrlInput">
 
 
-                <label for="descricao" class="cadDescricao">Descrição
-                    *</label>
+                <label for="descricao" class="cadDescricao">Descrição*</label>
                 <textarea name="descricao" id="cadDescricaoInput" cols="30" rows="10" maxlength="150"></textarea>
 
                 <button type="submit" id="btnEnviar" class="btn Enviar">Adicionar</button>

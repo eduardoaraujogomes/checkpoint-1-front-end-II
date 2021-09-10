@@ -38,7 +38,7 @@ const formulario = document.getElementById("form");
 cadNomeInput.addEventListener("focusout", () => {
     if (cadNomeInput.value.length <= 2) {
         cadNome.setAttribute('style', "color: red");
-        cadNome.innerHTML = "Nome do Produto *De 3 e 20 caracteres.";
+        cadNome.innerHTML = "Nome do Produto* De 3 e 20 caracteres.";
         validaNome = false;
     }
 });
@@ -46,7 +46,7 @@ cadNomeInput.addEventListener("focusout", () => {
 cadNomeInput.addEventListener("keyup", () => {
     if (cadNomeInput.value.length > 2) {
         cadNome.setAttribute('style', "color: green");
-        cadNome.innerHTML = "Nome do Produto *";
+        cadNome.innerHTML = "Nome do Produto*";
         validaNome = true;
     }
 });
@@ -55,7 +55,7 @@ cadNomeInput.addEventListener("keyup", () => {
 cadCodigoInput.addEventListener("focusout", () => {
     if (cadCodigoInput.value.length <= 2 || cadCodigoInput.value.length > 10) {
         cadCodigo.setAttribute('style', "color: red");
-        cadCodigo.innerHTML = "Código do Produto *De 3 e 10 digitos.";
+        cadCodigo.innerHTML = "Código do Produto* De 3 e 10 digitos.";
         validaCodigo = false;
     }
 });
@@ -63,7 +63,7 @@ cadCodigoInput.addEventListener("focusout", () => {
 cadCodigoInput.addEventListener("keyup", () => {
     if (cadCodigoInput.value.length > 2 && cadCodigoInput.value.length < 11) {
         cadCodigo.setAttribute('style', "color: green");
-        cadCodigo.innerHTML = "Código do Produto *";
+        cadCodigo.innerHTML = "Código do Produto*";
         validaCodigo = true;
     }
 });
@@ -72,7 +72,7 @@ cadCodigoInput.addEventListener("keyup", () => {
 cadTamanhoSelect.addEventListener("focusout", () => {
     if (cadTamanhoSelect.value == "emBranco") {
         cadTamanho.setAttribute('style', "color: red");
-        cadTamanho.innerHTML = "Tamanho *Defina um tamanho.";
+        cadTamanho.innerHTML = "Tamanho* Defina um tamanho.";
         validaTamanho = false;
     }
 });
@@ -80,7 +80,7 @@ cadTamanhoSelect.addEventListener("focusout", () => {
 cadTamanhoSelect.addEventListener("keyup", () => {
     if (cadTamanhoSelect.value != "emBranco") {
         cadTamanho.setAttribute('style', "color: green");
-        cadTamanho.innerHTML = "Tamanho *";
+        cadTamanho.innerHTML = "Tamanho*";
         validaTamanho = true;
     }
 });
@@ -88,7 +88,7 @@ cadTamanhoSelect.addEventListener("keyup", () => {
 cadTamanhoSelect.addEventListener("click", () => {
     if (cadTamanhoSelect.value != "emBranco") {
         cadTamanho.setAttribute('style', "color: green");
-        cadTamanho.innerHTML = "Tamanho *";
+        cadTamanho.innerHTML = "Tamanho*";
         validaTamanho = true;
     }
 });
@@ -97,7 +97,7 @@ cadTamanhoSelect.addEventListener("click", () => {
 cadCorInput.addEventListener("focusout", () => {
     if (cadCorInput.value.length <= 2) {
         cadCor.setAttribute('style', "color: red");
-        cadCor.innerHTML = "Cor *De 3 e 20 caracteres.";
+        cadCor.innerHTML = "Cor* De 3 e 20 caracteres.";
         validaCor = false;
     }
 });
@@ -105,24 +105,24 @@ cadCorInput.addEventListener("focusout", () => {
 cadCorInput.addEventListener("keyup", () => {
     if (cadCorInput.value.length > 2) {
         cadCor.setAttribute('style', "color: green");
-        cadCor.innerHTML = "Cor *";
+        cadCor.innerHTML = "Cor*";
         validaCor = true;
     }
 });
 
 //validando campo preço.
 cadPrecoInput.addEventListener("focusout", () => {
-    if (cadPrecoInput.value.length <= 2) {
+    if (cadPrecoInput.value.length <= 2 ||cadPrecoInput.value.length > 10) {
         cadPreco.setAttribute('style', "color: red");
-        cadPreco.innerHTML = "Preço *De 3 e 10 digitos.";
+        cadPreco.innerHTML = "Preço* De 3 e 10 digitos.";
         validaPreco = false;
     }
 });
 
 cadPrecoInput.addEventListener("keyup", () => {
-    if (cadPrecoInput.value.length > 2) {
+    if (cadPrecoInput.value.length > 2 && cadPrecoInput.value.length < 11) {
         cadPreco.setAttribute('style', "color: green");
-        cadPreco.innerHTML = "Preço *";
+        cadPreco.innerHTML = "Preço*";
         validaPreco = true;
     }
 });
@@ -131,7 +131,7 @@ cadPrecoInput.addEventListener("keyup", () => {
 cadDescricaoInput.addEventListener("focusout", () => {
     if (cadDescricaoInput.value.length <= 2) {
         cadDescricao.setAttribute('style', "color: red");
-        cadDescricao.innerHTML = "Descrição *De 3 e 150 caracteres.";
+        cadDescricao.innerHTML = "Descrição* De 3 e 150 caracteres.";
         validaDescricao = false;
     }
 });
@@ -139,7 +139,7 @@ cadDescricaoInput.addEventListener("focusout", () => {
 cadDescricaoInput.addEventListener("keyup", () => {
     if (cadDescricaoInput.value.length > 2) {
         cadDescricao.setAttribute('style', "color: green");
-        cadDescricao.innerHTML = "Descrição *";
+        cadDescricao.innerHTML = "Descrição*";
         validaDescricao = true;
 
     }
