@@ -1,14 +1,9 @@
 import { formulario, cadCodigoInput, cadDescricaoInput, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
 
-
-
 const cardsSection = document.getElementById("card-container");
+
 //se tiver valores no localStorage ele pega esses valores, se não tiver, ele seta um array vazio.
 let listaProdutos = JSON.parse(localStorage.getItem("listaProduto") || '[]');
-
-
-//variável para armazenar os valores dos cartôes criados
-
 
 //Função que vai funcionar quando clicar no botão de Adicionar
 formulario.addEventListener("submit", (event) => {
@@ -19,7 +14,7 @@ formulario.addEventListener("submit", (event) => {
         //Array de valores dos cards
         listaProdutos.push(
             {
-                nome: cadNomeInput.value,
+                nome:cadNomeInput.value,
                 codigo: cadCodigoInput.value,
                 tamanho: cadTamanhoSelect.value,
                 cor: cadCorInput.value,
@@ -28,6 +23,7 @@ formulario.addEventListener("submit", (event) => {
                 descricao: cadDescricaoInput.value
             }
         );
+        
         //cria o card com os valores passado no formulário
         criarCard(cadNomeInput.value, cadCodigoInput.value, cadTamanhoSelect.value, cadCorInput.value, cadPrecoInput.value, cadUrlInput.value, cadDescricaoInput.value);
 
@@ -98,7 +94,7 @@ function modalsFunctions() {
 
     //Looping para poder pegar todos os nós dos modais criados
 
-    for (let i = 0;i < cards.length;i++) {
+    for (let i = 0; i < cards.length; i++) {
 
         let btnCircle = btnsCircle[i];
         let btnDeleter = btnsDeletar[i];

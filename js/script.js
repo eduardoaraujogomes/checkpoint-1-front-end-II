@@ -1,37 +1,35 @@
 
 //Criando variáveis para validação dos campos.
-let cadNome = document.querySelector(".cadNome");
-let cadNomeInput = document.querySelector(".cadNomeInput");
+const cadNome = document.querySelector(".cadNome");
+const cadNomeInput = document.querySelector(".cadNomeInput");
 let validaNome = false;
 
-let cadCodigo = document.querySelector(".cadCodigo");
-let cadCodigoInput = document.querySelector(".cadCodigoInput");
+const cadCodigo = document.querySelector(".cadCodigo");
+const cadCodigoInput = document.querySelector(".cadCodigoInput");
 let validaCodigo = false;
 
-let cadTamanho = document.querySelector(".cadTamanho");
-let cadTamanhoSelect = document.querySelector(".cadTamanhoSelect");
+const cadTamanho = document.querySelector(".cadTamanho");
+const cadTamanhoSelect = document.querySelector(".cadTamanhoSelect");
 let validaTamanho = false;
 
-let cadCor = document.querySelector(".cadCor");
-let cadCorInput = document.querySelector(".cadCorInput");
+const cadCor = document.querySelector(".cadCor");
+const cadCorInput = document.querySelector(".cadCorInput");
 let validaCor = false;
 
-let cadPreco = document.querySelector(".cadPreco");
-let cadPrecoInput = document.querySelector(".cadPrecoInput");
+const cadPreco = document.querySelector(".cadPreco");
+const cadPrecoInput = document.querySelector(".cadPrecoInput");
 let validaPreco = false;
 
-/* ESSE DAQUI É O DA URL, FALTA TRATAR ELE  */
-let cadUrl = document.querySelector(".cadUrl");
-let cadUrlInput = document.querySelector(".cadUrlInput");
+const cadUrl = document.querySelector(".cadUrl");
+const cadUrlInput = document.querySelector(".cadUrlInput");
 let validaUrl = false;
 
-let cadDescricao = document.querySelector(".cadDescricao");
-let cadDescricaoInput = document.querySelector("#cadDescricaoInput");
+const cadDescricao = document.querySelector(".cadDescricao");
+const cadDescricaoInput = document.querySelector("#cadDescricaoInput");
 let validaDescricao = false;
 
 //criando variáveis para validar o envio e selecionando o botão adicionar.
 let validaAdicionar = false;
-let btnEnviar = document.querySelector("#btnEnviar");
 const formulario = document.getElementById("form");
 
 //validando campo nome.
@@ -145,20 +143,10 @@ cadDescricaoInput.addEventListener("keyup", () => {
     }
 });
 
-
 //Ação de validação quando apertar o botão adicionar.
 formulario.addEventListener("submit", () => {
 
     if (validaNome && validaCodigo && validaTamanho && validaCor && validaPreco && validaDescricao) {
-
-        //Atribui um array quando a variavel não existir no localStorage, caso contrario converte o arquivo JSON e armazena no array.
-
-
-        //Transforma os dados do Input em um objeto e adiciona ao array listaProduto.
-
-
-        //Vai criar a chave (nome do arquivo) e valor (arquivo JSON), caso já exista vai atualizar.
-
 
         //Vai atrivuir a cor padrão ao texto do formulario.
         cadNome.setAttribute('style', "color: var(--text-color)");
@@ -181,7 +169,6 @@ formulario.addEventListener("submit", () => {
 
         //Caso não seja validado todos os campos.
     } else {
-        alert("Confira os campos");
         validaAdicionar = false;
 
         //Da foco em todos os inputs para ativar as validação.
@@ -192,7 +179,8 @@ formulario.addEventListener("submit", () => {
         cadPrecoInput.focus();
         cadUrlInput.focus();
         cadDescricaoInput.focus();
+        cadNomeInput.focus();
     }
 });
 
-export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricaoInput, validaAdicionar, cadUrlInput, formulario };
+export { cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricaoInput, validaAdicionar, cadUrlInput, formulario };
