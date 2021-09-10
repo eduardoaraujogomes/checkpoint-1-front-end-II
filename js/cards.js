@@ -11,21 +11,36 @@ formulario.addEventListener("submit", (event) => {
     event.preventDefault();
     if (validaAdicionar) {
 
+function priLetMai (texto){
+    const retValor = texto.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
+        return a.toUpperCase();
+    });
+    return retValor;
+}
+
+let guarNom = priLetMai(cadNomeInput.value)
+let guarCod = cadCodigoInput.value
+let guarTam = cadTamanhoSelect.value
+let guarCor = priLetMai(cadCorInput.value)
+let guarPre = cadPrecoInput.value
+let guarUrl = cadUrlInput.value
+let guarDes = cadDescricaoInput.value.substring(0,1).toUpperCase().concat(cadDescricaoInput.value.substring(1))
+
         //Array de valores dos cards
         listaProdutos.push(
             {
-                nome:cadNomeInput.value,
-                codigo: cadCodigoInput.value,
-                tamanho: cadTamanhoSelect.value,
-                cor: cadCorInput.value,
-                preco: cadPrecoInput.value,
-                imagem: cadUrlInput.value,
-                descricao: cadDescricaoInput.value
+                nome:guarNom,
+                codigo: guarCod,
+                tamanho: guarTam,
+                cor: guarCor,
+                preco: guarPre,
+                imagem: guarUrl,
+                descricao: guarDes
             }
         );
-        
+
         //cria o card com os valores passado no formulário
-        criarCard(cadNomeInput.value, cadCodigoInput.value, cadTamanhoSelect.value, cadCorInput.value, cadPrecoInput.value, cadUrlInput.value, cadDescricaoInput.value);
+        criarCard(guarNom, guarCod, guarTam, guarCor, guarPre, guarUrl, guarDes);
 
         //Seta os valores do listaProdutos no localStorage
         localStorage.setItem("listaProduto", JSON.stringify(listaProdutos));
