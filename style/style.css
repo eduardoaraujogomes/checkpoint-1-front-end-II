@@ -40,6 +40,7 @@ body {
 main {
     width: 100vw;
     height: 100vh;
+    
 }
 
 #container {
@@ -49,6 +50,26 @@ main {
     justify-content: center;
     width: 90%;
     margin: 3rem auto;
+}
+
+@media (max-width: 468px) {
+    .menu-logo {
+        width: 100%;
+        text-align: center;
+      }
+    
+      .menu-logo a img {
+        width: 5rem;
+      }
+
+      .menu-nav {
+        width: 100%;
+        display: block;        
+      }
+
+    .btn {
+        width: 24rem;
+    }
 }
 
 @media (max-width: 768px) {

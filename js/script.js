@@ -194,5 +194,3 @@ formulario.addEventListener("submit", () => {
         cadDescricaoInput.focus();
     }
 });
-
-export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricaoInput, validaAdicionar, cadUrlInput, formulario };

@@ -1,20 +1,28 @@
-import { formulario, cadCodigoInput, cadDescricaoInput, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
+let cadNomeInput = document.querySelector(".cadNomeInput");
+let cadCodigoInput = document.querySelector(".cadCodigoInput");
+let cadTamanhoSelect = document.querySelector(".cadTamanhoSelect");
+let cadCorInput = document.querySelector(".cadCorInput");
+let cadPrecoInput = document.querySelector(".cadPrecoInput");
+let cadUrlInput = document.querySelector(".cadUrlInput");
+let cadDescricaoInput = document.querySelector("#cadDescricaoInput");
+const formulario = document.getElementById("form");
 
 
 
 const cardsSection = document.getElementById("card-container");
 //se tiver valores no localStorage ele pega esses valores, se não tiver, ele seta um array vazio.
-let listaProdutos = JSON.parse(localStorage.getItem("listaProduto") || '[]');
+export let listaProdutos = JSON.parse(localStorage.getItem("listaProduto") || '[]');
 
 
 //variável para armazenar os valores dos cartôes criados
 
 
 //Função que vai funcionar quando clicar no botão de Adicionar
-formulario.addEventListener("submit", (event) => {
-    //Tira o comportamento padrão do botão submit de atualizar a página
-    event.preventDefault();
-    if (validaAdicionar) {
+if (formulario !== null) {
+    formulario.addEventListener("submit", (event) => {
+        //Tira o comportamento padrão do botão submit de atualizar a página
+        event.preventDefault();
+
 
         //Array de valores dos cards
         listaProdutos.push(
@@ -37,12 +45,15 @@ formulario.addEventListener("submit", (event) => {
 
         //Resetando os valores dentro do formulário
         formulario.reset();
+
     }
-});
+    );
+}
+
 
 
 //função para criar os cartões
-function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
+export function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
     cardsSection.innerHTML += `
     <article class="card">
         <img src="${imagem}"
@@ -72,7 +83,9 @@ function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
 `;
     modalsFunctions();
 
+
 }
+
 
 
 //Função para chamar os cards armazenados no localStorage, quando o usuário der f5 ou fechar e abrir a página
@@ -81,6 +94,10 @@ window.onload = function () {
     listaProdutos.map(value => {
         criarCard(value.nome, value.codigo, value.tamanho, value.cor, value.preco, value.imagem, value.descricao);
     });
+    if (listaProdutos.length > 0) {
+        cardsSection.innerHTML += ` <button type="button" class="btn adicionar"
+        onclick="location.href='produtos.html'">Adicionar</button>`;
+    }
 };
 
 
@@ -130,5 +147,6 @@ function modalsFunctions() {
         });
     }
 }
+
 
 
