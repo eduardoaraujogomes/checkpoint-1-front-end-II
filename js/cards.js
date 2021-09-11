@@ -75,7 +75,7 @@ function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
                 <h3>${nome}</h3>
                 <p>Tamanho ${tamanho}</p>
                 <span>Preço: R$${preco}</span>
-                <p class ="descricao">${descricao}</p>
+                <p class ="descricao">Descrição: ${descricao}</p>
                 <button class="btn-deletar">Deletar Card</button>
             </div>
         </div>

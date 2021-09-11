@@ -202,7 +202,7 @@ cadTamanhoSelect.addEventListener("click", () => {
 cadDescricaoInput.addEventListener("focusout", () => {
     if (cadDescricaoInput.value.length <= 2) {
         cadDescricao.setAttribute('style', "color: red");
-        cadDescricao.innerHTML = "Descrição* De 3 e 150 caracteres.";
+        cadDescricao.innerHTML = "Descrição* De 3 a 150 caracteres.";
         validaDescricao = false;
     }
 });

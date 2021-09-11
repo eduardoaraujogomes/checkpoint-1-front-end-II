@@ -1,13 +1,5 @@
 /* header e navbar */
 
-ul {
-    list-style: none;
-}
-  
-a {
-    text-decoration: none;
-}
-
 header {
    background-color: var(--principal-btn);
 }
@@ -16,33 +8,31 @@ header {
     background-color: var(--principal-section);
 }
   
-.menu {
+.navbar {
     padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
 }
   
-.menu a img {
-    width: 4rem;
+.logo {
+    max-width: 4rem;
 }
   
-.menu-nav ul {
-    display: flex; 
-    flex-wrap: wrap;
-}
-  
-.menu-nav a {
-    display: block;
-    padding: 1rem;
+.navbar-light .navbar-nav .nav-link {
     color: var(--text-btn);
+    margin-top: .5rem;
 }
 
-.menu-nav a:hover {
+.navbar-light .navbar-nav .nav-link:hover {
     color: var(--hover-light);
 }
 
-.modo-noite .menu-nav a:hover {
+.navbar-light .navbar-nav .nav-link .modo-noite:hover {
     color: var(--circle-btn);
+}
+
+.navbar-light .navbar-nav .nav-link:visited {
+    color: var(--text-btn);
+}
+
+.navbar-toggler {
+    background-color: var(--text-btn);
 }

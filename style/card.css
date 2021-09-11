@@ -2,7 +2,7 @@
 
 #card-container {
     margin: 0.5rem;
-    max-width: 50rem;
+    width: 20rem;
 }
 
 #card-container .card {
@@ -11,7 +11,7 @@
     border-radius: 0.5rem;
     margin-bottom: 1rem;
     display: flex;
-    gap: 2.0rem;
+    gap: 1.0rem;
     border-radius: 1rem;
 }
 
