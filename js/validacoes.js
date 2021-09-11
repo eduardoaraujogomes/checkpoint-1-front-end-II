@@ -10,7 +10,7 @@ const formulario = document.getElementById("form");
 
 
 cadNomeInput.addEventListener('focusout', () => {
-    if (cadNomeInput.style.color === "lightsalmon") cadNomeInput.focus();
+    if (cadNomeInput.style.backgroundColor === "lightsalmon") cadNomeInput.focus();
     else {
         cadNomeInput.style.background = "#FFFFFF";
     }
@@ -20,7 +20,7 @@ cadNomeInput.addEventListener('focusout', () => {
 const masks = {
     nome(value) {
         if (!/(?=(?:.*[a-z]){3})/.test(value)) {
-            cadNome.innerHTML = " Digite um produto válido";
+            cadNome.innerHTML = " Seu produto precisa ter pelo menos 3 letras";
             cadNomeInput.style.cssText = "background: url('https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg') no-repeat 95% 50% lightsalmon"; "background-size: 25px;", "border: 1px solid var(--color-default);", "margin: 0.5rem 0;", "border-radius: 0.2rem;", "padding: 0.8rem;", "font-size: 1.0rem;";;
             return value;
         } else {
