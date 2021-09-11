@@ -1,14 +1,9 @@
 import { formulario, cadCodigoInput, cadDescricaoInput, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
 
-
-
 const cardsSection = document.getElementById("card-container");
+
 //se tiver valores no localStorage ele pega esses valores, se não tiver, ele seta um array vazio.
 let listaProdutos = JSON.parse(localStorage.getItem("listaProduto") || '[]');
-
-
-//variável para armazenar os valores dos cartôes criados
-
 
 //Função que vai funcionar quando clicar no botão de Adicionar
 formulario.addEventListener("submit", (event) => {
@@ -16,20 +11,36 @@ formulario.addEventListener("submit", (event) => {
     event.preventDefault();
     if (validaAdicionar) {
 
+function priLetMai (texto){
+    const retValor = texto.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
+        return a.toUpperCase();
+    });
+    return retValor;
+}
+
+let guarNom = priLetMai(cadNomeInput.value)
+let guarCod = cadCodigoInput.value
+let guarTam = cadTamanhoSelect.value
+let guarCor = priLetMai(cadCorInput.value)
+let guarPre = cadPrecoInput.value
+let guarUrl = cadUrlInput.value
+let guarDes = cadDescricaoInput.value.substring(0,1).toUpperCase().concat(cadDescricaoInput.value.substring(1))
+
         //Array de valores dos cards
         listaProdutos.push(
             {
-                nome: cadNomeInput.value,
-                codigo: cadCodigoInput.value,
-                tamanho: cadTamanhoSelect.value,
-                cor: cadCorInput.value,
-                preco: cadPrecoInput.value,
-                imagem: cadUrlInput.value,
-                descricao: cadDescricaoInput.value
+                nome:guarNom,
+                codigo: guarCod,
+                tamanho: guarTam,
+                cor: guarCor,
+                preco: guarPre,
+                imagem: guarUrl,
+                descricao: guarDes
             }
         );
+
         //cria o card com os valores passado no formulário
-        criarCard(cadNomeInput.value, cadCodigoInput.value, cadTamanhoSelect.value, cadCorInput.value, cadPrecoInput.value, cadUrlInput.value, cadDescricaoInput.value);
+        criarCard(guarNom, guarCod, guarTam, guarCor, guarPre, guarUrl, guarDes);
 
         //Seta os valores do listaProdutos no localStorage
         localStorage.setItem("listaProduto", JSON.stringify(listaProdutos));
@@ -98,7 +109,7 @@ function modalsFunctions() {
 
     //Looping para poder pegar todos os nós dos modais criados
 
-    for (let i = 0;i < cards.length;i++) {
+    for (let i = 0; i < cards.length; i++) {
 
         let btnCircle = btnsCircle[i];
         let btnDeleter = btnsDeletar[i];
