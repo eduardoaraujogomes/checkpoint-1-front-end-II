@@ -106,6 +106,7 @@ cadTamanhoSelect.addEventListener("focusout", () => {
         cadTamanho.setAttribute('style', "color: red");
         cadTamanho.innerHTML = "Tamanho* Defina um tamanho.";
         validaTamanho = false;
+        console.log(cadPrecoInput)
     }
 });
 

@@ -17,16 +17,17 @@ function priLetMai (texto){
     });
     return retValor;
 }
-// function precoReais (texto){
-//     .replace(/(\d{1,3}(\.\d{3})*|\d+)(\,\d{2})?$/)
-//     return retValor;
-// }
+function precoReais (texto){
+    const priValor=texto.replace(/(,)/,"")
+    const segValor=priValor.replace(/(\d{2})?$/,',$1')
+    return segValor;
+}
 
 let guarNom = priLetMai(cadNomeInput)
 let guarCod = cadCodigoInput
 let guarTam = cadTamanhoSelect.value
 let guarCor = priLetMai(cadCorInput)
-let guarPre = cadPrecoInput.replace(/(\d)/)
+let guarPre = precoReais(cadPrecoInput)
 let guarUrl = cadUrlInput.value
 let guarDes = cadDescricaoInput.value.substring(0,1).toUpperCase().concat(cadDescricaoInput.value.substring(1))
 
