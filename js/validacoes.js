@@ -10,7 +10,10 @@ const formulario = document.getElementById("form");
 
 
 cadNomeInput.addEventListener('focusout', () => {
-    if (cadNome.style.color === "red") cadNomeInput.focus();
+    if (cadNomeInput.style.color === "lightsalmon") cadNomeInput.focus();
+    else {
+        cadNomeInput.style.background = "#FFFFFF";
+    }
 });
 
 
@@ -18,11 +21,11 @@ const masks = {
     nome(value) {
         if (!/(?=(?:.*[a-z]){3})/.test(value)) {
             cadNome.innerHTML = " Digite um produto válido";
-            cadNome.style.color = "red";
+            cadNomeInput.style.cssText = "background: url('https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg') no-repeat 95% 50% lightsalmon"; "background-size: 25px;", "border: 1px solid var(--color-default);", "margin: 0.5rem 0;", "border-radius: 0.2rem;", "padding: 0.8rem;", "font-size: 1.0rem;";;
             return value;
         } else {
             cadNome.innerHTML = "Nome do Produto*";
-            cadNome.style.color = "var(--text-color)";
+            cadNomeInput.style.cssText = "background: url('https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg') no-repeat 95% 50% lightgreen;", "background-size: 25px;", "border: 1px solid var(--color-default);", "margin: 0.5rem 0;", "border-radius: 0.2rem;", "padding: 0.8rem;", "font-size: 1.0rem;";
             return value;
         }
     },

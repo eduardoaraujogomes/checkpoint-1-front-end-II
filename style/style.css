@@ -13,6 +13,9 @@
     --box-shadow-color: rgb(0 0 0 / 0.2);
     --hover-principal: #39A2E9;
     --hover-light: #DDE8ED;
+    --color-default: grey;
+    --color-invalid: red;
+    --color-valid: green;
 }
 
 .modo-noite:root {

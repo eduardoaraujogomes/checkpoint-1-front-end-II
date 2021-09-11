@@ -67,17 +67,14 @@
                     <h1>Adicionar Produtos</h1>
                     <label for="nomeProduto" class="cadNome">Nome do
                         Produto*</label>
-                    <input type="text" class="cadNomeInput" placeholder=""
-                        data-js="nome" minlength="3"
-                        oninvalid="this.setCustomValidity('Digite um produto válido')"
-                        oninput="this.setCustomValidity('')" required autofocus>
+                    <input type="text" class="cadNomeInput" placeholder=" "
+                        data-js="nome" minlength="3" required autofocus>
 
                     <label for="codigoProduto" class="cadCodigo">Código do
                         Produto*</label>
-                    <input type="text" class="cadCodigoInput" placeholder=""
+                    <input type="text" class="cadCodigoInput" placeholder=" "
                         minlength="3" maxlength="10" size="10" data-js="codigo"
-                        oninvalid="this.setCustomValidity('Digite um código entre 3 a 10 dígitos')"
-                        oninput="this.setCustomValidity('')" required>
+                        required>
 
                     <label for="tamanho" class="cadTamanho">Tamanho*</label>
                     <select class="cadTamanhoSelect"
