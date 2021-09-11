@@ -1,105 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
-    <link rel="stylesheet" href="./style/style.css">
-    <!-- GOOGLE FONTE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
-        rel="stylesheet">
-    <title>Checkpoint 1</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./style/style.css">
+        <!-- GOOGLE FONTE -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
+            rel="stylesheet">
+        <title>Checkpoint 1</title>
+    </head>
 
-<body>
-    <header>
-        <div class="menu">
-            <div class="menu-logo">
-                <a href="#"><img src="./img/icon-meia" alt="" /></a>
+    <body>
+        <header>
+            <div class="menu">
+                <div class="menu-logo">
+                    <a href="#"><img src="./img/icon-meia" alt="" /></a>
+                </div>
+                <nav class="menu-nav">
+                    <ul>
+                        <li><a href="#">Todos os produtos</a></li>
+                        <li><a href="#">Blusas</a></li>
+                        <li><a href="#">Calças</a></li>
+                        <li><a href="#">Sapatos</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="menu-nav">
-                <ul>
-                    <li><a href="#">Todos os produtos</a></li>
-                    <li><a href="#">Blusas</a></li>
-                    <li><a href="#">Calças</a></li>
-                    <li><a href="#">Sapatos</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <div class="switch_container">
-            <input id="modo-noturno" class="switch switch-botao" type="checkbox">
-            <label for="modo-noturno"></label>
-        </div>
-        <section id="container">
-            <form action="" id="form">
-                <h1>Adicionar Produtos</h1>
-                <label for="nomeProduto" class="cadNome">Nome do Produto
-                    *</label>
-                <input type="text" class="cadNomeInput" placeholder="" maxlength="20">
+        </header>
+        <main>
+            <div class="switch_container">
+                <input id="modo-noturno" class="switch switch-botao"
+                    type="checkbox">
+                <label for="modo-noturno"></label>
+            </div>
+            <section id="container">
+                <form action="" id="form">
+                    <h1>Adicionar Produtos</h1>
+                    <label for="nomeProduto" class="cadNome">Nome do Produto
+                        *</label>
+                    <input type="text" class="cadNomeInput" placeholder=""
+                        maxlength="20">
 
-                <label for="codigoProduto" class="cadCodigo">Código do
-                    Produto * </label>
-                <input type="number" class="cadCodigoInput" placeholder="">
+                    <label for="codigoProduto" class="cadCodigo">Código do
+                        Produto * </label>
+                    <input type="number" class="cadCodigoInput" placeholder="">
 
-                <label for="tamanho" class="cadTamanho">Tamanho *</label>
-                <select class="cadTamanhoSelect">
-                    <option value="emBranco">Defina um tamanho.</option>
-                    <option value="PP">PP</option>
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                    <option value="31">31</option>
-                    <option value="32">32</option>
-                    <option value="33">33</option>
-                    <option value="34">34</option>
-                    <option value="35">35</option>
-                    <option value="36">36</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                </select>
-                <!-- <input type="text" class="cadTamanhoInput" placeholder="" required> -->
+                    <label for="tamanho" class="cadTamanho">Tamanho *</label>
+                    <select class="cadTamanhoSelect">
+                        <option value="emBranco">Defina um tamanho.</option>
+                        <option value="PP">PP</option>
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                    </select>
+                    <!-- <input type="text" class="cadTamanhoInput" placeholder="" required> -->
 
-                <label for="cor" class="cadCor">Cor *</label>
-                <input type="text" class="cadCorInput" placeholder="" maxlength="20">
+                    <label for="cor" class="cadCor">Cor *</label>
+                    <input type="text" class="cadCorInput" placeholder=""
+                        maxlength="20">
 
-                <label for="preco" class="cadPreco">Preço *</label>
-                <input type="number" step="0.01" min="0.01" class="cadPrecoInput" placeholder="0,00">
+                    <label for="preco" class="cadPreco">Preço *</label>
+                    <input type="text" step="0.01" min="0.01"
+                        class="cadPrecoInput" placeholder="0,00"
+                        data-js="valor">
 
-                <!-- ADIÇÃO DO CAMPO PARA A URL -->
-                <label for="url" class="cadUrl">Url da Imagem *</label>
-                <input type="url" class="cadUrlInput">
+                    <!-- ADIÇÃO DO CAMPO PARA A URL -->
+                    <label for="url" class="cadUrl">Url da Imagem *</label>
+                    <input type="url" class="cadUrlInput">
 
 
-                <label for="descricao" class="cadDescricao">Descrição
-                    *</label>
-                <textarea name="descricao" id="cadDescricaoInput" cols="30" rows="10" maxlength="150"></textarea>
+                    <label for="descricao" class="cadDescricao">Descrição
+                        *</label>
+                    <textarea name="descricao" id="cadDescricaoInput" cols="30"
+                        rows="10" maxlength="150"></textarea>
 
-                <button type="submit" id="btnEnviar" class="btn Enviar">Adicionar</button>
-                <button type="reset" class="btn Limpar">Limpar</button>
-            </form>
-            <section id="card-container">
-                <!--                     <button type="submit"
+                    <button type="submit" id="btnEnviar"
+                        class="btn Enviar">Adicionar</button>
+                    <button type="reset" class="btn Limpar">Limpar</button>
+                </form>
+                <section id="card-container">
+                    <!--                     <button type="submit"
                         class="btn adicionar">Adicionar</button> -->
+                </section>
             </section>
-        </section>
-    </main>
+        </main>
 
-    <script src="/js/script.js" type="module"></script>
-    <script src="/js/cards.js" type="module"></script>
-    <script src="/js/dark-mode.js"></script>
-</body>
+        <script src="/js/script.js" type="module"></script>
+        <script src="/js/cards.js" type="module"></script>
+        <script src="/js/dark-mode.js"></script>
+    </body>
 
 </html>

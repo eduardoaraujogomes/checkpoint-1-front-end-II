@@ -110,22 +110,26 @@ cadCorInput.addEventListener("keyup", () => {
     }
 });
 
-//validando campo preço.
+
+
+/* //validando campo preço.
 cadPrecoInput.addEventListener("focusout", () => {
     if (cadPrecoInput.value.length <= 2 || cadPrecoInput.value.length > 10) {
         cadPreco.setAttribute('style', "color: red");
         cadPreco.innerHTML = "Preço *De 3 e 10 digitos.";
         validaPreco = false;
     }
+}); */
+const mask = (value) => {
+    const cleanValue = +value.replace(/\D+/g, '');
+    const options = { style: 'currency', currency: 'BRL' };
+    return new Intl.NumberFormat('pt-br', options).format(cleanValue / 100);
+};
+
+cadPrecoInput.addEventListener("input", (e) => {
+    e.target.value = mask(e.target.value);
 });
 
-cadPrecoInput.addEventListener("keyup", () => {
-    if (cadPrecoInput.value.length > 2 && cadPrecoInput.value.length < 11) {
-        cadPreco.setAttribute('style', "color: green");
-        cadPreco.innerHTML = "Preço *";
-        validaPreco = true;
-    }
-});
 
 //validando campo descrição.
 cadDescricaoInput.addEventListener("focusout", () => {
@@ -146,10 +150,12 @@ cadDescricaoInput.addEventListener("keyup", () => {
 });
 
 
+
+
 //Ação de validação quando apertar o botão adicionar.
 formulario.addEventListener("submit", () => {
 
-    if (validaNome && validaCodigo && validaTamanho && validaCor && validaPreco && validaDescricao) {
+    if (validaNome && validaCodigo && validaTamanho && validaCor && validaDescricao) {
 
         //Atribui um array quando a variavel não existir no localStorage, caso contrario converte o arquivo JSON e armazena no array.
 
@@ -165,7 +171,7 @@ formulario.addEventListener("submit", () => {
         cadCodigo.setAttribute('style', "color: var(--text-color)");
         cadTamanho.setAttribute('style', "color: var(--text-color)");
         cadCor.setAttribute('style', "color: var(--text-color)");
-        cadPreco.setAttribute('style', "color: var(--text-color)");
+        /*         cadPreco.setAttribute('style', "color: var(--text-color)"); */
         cadDescricao.setAttribute('style', "color: var(--text-color)");
 
         //Atribui valor para a variável de validação que vai liberar a criação do card.
@@ -176,12 +182,11 @@ formulario.addEventListener("submit", () => {
         validaCodigo = false;
         validaTamanho = false;
         validaCor = false;
-        validaPreco = false;
+        /*         validaPreco = false; */
         validaDescricao = false;
 
         //Caso não seja validado todos os campos.
     } else {
-        alert("Confira os campos");
         validaAdicionar = false;
 
         //Da foco em todos os inputs para ativar as validação.
@@ -189,7 +194,7 @@ formulario.addEventListener("submit", () => {
         cadCodigoInput.focus();
         cadTamanhoSelect.focus();
         cadCorInput.focus();
-        cadPrecoInput.focus();
+        /*         cadPrecoInput.focus(); */
         cadUrlInput.focus();
         cadDescricaoInput.focus();
     }
