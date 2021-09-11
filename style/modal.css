@@ -20,10 +20,22 @@
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 18rem;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
+}
+
+.modo-noite .modal-content {
+    background-color: var(--principal-section);
+}
+
+.modal-content > img {
+    margin-bottom: 1rem;
+}
+
+.modal-content > p {
+    margin-top: 1rem;
 }
 
 /* Close Button */
@@ -52,12 +64,12 @@
     cursor: pointer;
     font-weight: 600;
     color: white;
-    background-color: #9FC1D0;
+    background-color: var(--principal-btn);
     align-self: flex-end;
 }
 
 .btn-deletar:active, .btn-deletar:hover {
-    color: #9FC1D0;
+    color: var(--circle-btn);
     background-color: white;
 }
 

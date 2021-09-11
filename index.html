@@ -5,33 +5,56 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS -->
-        <link rel="stylesheet" href="./style/style.css">
         <!-- GOOGLE FONTE -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
             rel="stylesheet">
+        <!-- BOOTSTRAP -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./style/style.css">
         <title>Checkpoint 1</title>
     </head>
 
     <body>
         <header>
-            <div class="menu">
-                <div class="menu-logo">
-                    <a href="#"><img src="./img/icon-meia" alt="" /></a>
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="menu" href="#"><img class="logo"
+                            src="img/icon-meia"></a>
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end"
+                        id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Todos os
+                                    produtos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blusas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Calças</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sapatos</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <nav class="menu-nav">
-                    <ul>
-                        <li><a href="#">Todos os produtos</a></li>
-                        <li><a href="#">Blusas</a></li>
-                        <li><a href="#">Calças</a></li>
-                        <li><a href="#">Sapatos</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            </nav>
         </header>
         <main>
             <div class="switch_container">
@@ -42,16 +65,19 @@
             <section id="container">
                 <form action="" id="form">
                     <h1>Adicionar Produtos</h1>
-                    <label for="nomeProduto" class="cadNome">Nome do Produto
-                        *</label>
+                    <label for="nomeProduto" class="cadNome">Nome do
+                        Produto*</label>
                     <input type="text" class="cadNomeInput" placeholder=""
-                        maxlength="20">
+                        maxlength="20" data-js="nome">
 
                     <label for="codigoProduto" class="cadCodigo">Código do
-                        Produto * </label>
-                    <input type="number" class="cadCodigoInput" placeholder="">
+                        Produto*</label>
+                    <input type="text" class="cadCodigoInput" placeholder=""
+                        data-js="codigo">
 
-                    <label for="tamanho" class="cadTamanho">Tamanho *</label>
+                    <!-- min="1" -->
+
+                    <label for="tamanho" class="cadTamanho">Tamanho*</label>
                     <select class="cadTamanhoSelect">
                         <option value="emBranco">Defina um tamanho.</option>
                         <option value="PP">PP</option>
@@ -74,27 +100,29 @@
                     </select>
                     <!-- <input type="text" class="cadTamanhoInput" placeholder="" required> -->
 
-                    <label for="cor" class="cadCor">Cor *</label>
+                    <label for="cor" class="cadCor">Cor*</label>
                     <input type="text" class="cadCorInput" placeholder=""
-                        maxlength="20">
+                        maxlength="20" data-js="cor">
 
-                    <label for="preco" class="cadPreco">Preço *</label>
-                    <input type="text" class="cadPrecoInput" placeholder="0,00"
-                        data-js="valor">
+                    <label for="preco" class="cadPreco">Preço*</label>
+                    <input type="text" name="inputPreco" class="cadPrecoInput"
+                        placeholder="0,00" data-js="preco">
+
+                    <!-- type="number" step="0.01" min="0.01" -->
 
                     <!-- ADIÇÃO DO CAMPO PARA A URL -->
-                    <label for="url" class="cadUrl">Url da Imagem *</label>
+                    <label for="url" class="cadUrl">Url da Imagem*</label>
                     <input type="url" class="cadUrlInput">
 
 
-                    <label for="descricao" class="cadDescricao">Descrição
-                        *</label>
+                    <label for="descricao"
+                        class="cadDescricao">Descrição*</label>
                     <textarea name="descricao" id="cadDescricaoInput" cols="30"
                         rows="10" maxlength="150"></textarea>
 
-                    <button type="submit" id="btnEnviar"
-                        class="btn Enviar">Adicionar</button>
-                    <button type="reset" class="btn Limpar">Limpar</button>
+                    <button type="submit" id="botaoEnviar"
+                        class="botao Enviar">Adicionar</button>
+                    <button type="reset" class="botao Limpar">Limpar</button>
                 </form>
                 <section id="card-container">
                     <!--                     <button type="submit"
@@ -102,6 +130,12 @@
                 </section>
             </section>
         </main>
+
+        <!-- BOOTSTRAP -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
 
         <script src="/js/script.js" type="module"></script>
         <script src="/js/cards.js" type="module"></script>

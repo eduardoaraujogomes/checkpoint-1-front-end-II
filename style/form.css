@@ -4,7 +4,7 @@ form {
     display: flex;
     flex-direction: column;
     background-color: var(--principal-background);
-    width: 30rem;
+    width: 20rem;
     margin: 0.5rem;
     padding: 2rem 3rem;
     border-radius: 1rem;
@@ -20,6 +20,7 @@ form h1 {
     margin-bottom: 3rem;
     color: var(--principal-btn);
     font-size: 1.8rem;
+    text-transform: uppercase;
 }
 
 label {
@@ -49,15 +50,13 @@ form textarea {
 /* ESTILO DO SELECT */
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border: none;
     border-radius: 0.2rem;
     background-color: white;
-    margin: 0.5rem 0;
-    padding: 0.8rem;
-    font-size: 1.0rem;
+    padding: 0.7rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
     /* Estilo da seta do select */
     background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
     background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
@@ -65,21 +64,33 @@ select {
     background-repeat: no-repeat;
 }
 
+select:focus {
+    background-image:
+      linear-gradient(45deg, var(--principal-btn) 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, var(--principal-btn) 50%),
+      linear-gradient(to right, #ccc, #ccc);
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      calc(100% - 2.5em) 0.5em;
+    border-color: var(--principal-btn);
+    outline: 0;
+  }
+
 /* ESTILO DOS INPUT [TYPE:"NUMBER] - SEM OS CONTADORES */
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    margin: 0;
 }
 
 input[type="number"] {
     -moz-appearance: textfield;
 }
 
-.btn {
+.botao {
     background-color: var(--principal-btn);
     font-size: 1.2rem;
-    width: 20rem;
+    width: 15rem;
     align-self: center;
     margin: 1.5rem 0.5rem 0.5rem 0.5rem;
     border: none;
@@ -94,17 +105,17 @@ input[type="number"] {
     cursor: pointer;
 }
 
-.btn:hover{
+.botao:hover{
     background-color: var(--hover-principal);
 }
 
-.btn[type="reset"] {
+.botao[type="reset"] {
     margin-top: 0.2rem;
     background-color: var(--text-btn);
     color: var(--principal-btn);
     border: 2px solid var(--principal-btn);
 }
 
-.btn[type="reset"]:hover{
+.botao[type="reset"]:hover{
     background-color: var(--hover-light);
 }
