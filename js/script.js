@@ -31,14 +31,14 @@ let validaDescricao = false;
 
 //criando variáveis para validar o envio e selecionando o botão adicionar.
 let validaAdicionar = false;
-let btnEnviar = document.querySelector("#btnEnviar");
+let botaoEnviar = document.querySelector("#botaoEnviar");
 const formulario = document.getElementById("form");
 
 //validando campo nome.
 cadNomeInput.addEventListener("focusout", () => {
     if (cadNomeInput.value.length <= 2) {
         cadNome.setAttribute('style', "color: red");
-        cadNome.innerHTML = "Nome do Produto* De 3 e 20 caracteres.";
+        cadNome.innerHTML = "Nome do Produto* De 3 a 20 caracteres.";
         validaNome = false;
     }
 });
@@ -55,7 +55,7 @@ cadNomeInput.addEventListener("keyup", () => {
 cadCodigoInput.addEventListener("focusout", () => {
     if (cadCodigoInput.value.length <= 2 || cadCodigoInput.value.length > 10) {
         cadCodigo.setAttribute('style', "color: red");
-        cadCodigo.innerHTML = "Código do Produto* De 3 e 10 digitos.";
+        cadCodigo.innerHTML = "Código do Produto* De 3 a 10 digitos.";
         validaCodigo = false;
     }
 });
@@ -97,7 +97,7 @@ cadTamanhoSelect.addEventListener("click", () => {
 cadCorInput.addEventListener("focusout", () => {
     if (cadCorInput.value.length <= 2) {
         cadCor.setAttribute('style', "color: red");
-        cadCor.innerHTML = "Cor* De 3 e 20 caracteres.";
+        cadCor.innerHTML = "Cor* De 3 a 20 caracteres.";
         validaCor = false;
     }
 });
@@ -114,7 +114,7 @@ cadCorInput.addEventListener("keyup", () => {
 cadPrecoInput.addEventListener("focusout", () => {
     if (cadPrecoInput.value.length <= 2 ||cadPrecoInput.value.length > 10) {
         cadPreco.setAttribute('style', "color: red");
-        cadPreco.innerHTML = "Preço* De 3 e 10 digitos.";
+        cadPreco.innerHTML = "Preço* De 3 a 10 digitos.";
         validaPreco = false;
     }
 });
@@ -131,7 +131,7 @@ cadPrecoInput.addEventListener("keyup", () => {
 cadDescricaoInput.addEventListener("focusout", () => {
     if (cadDescricaoInput.value.length <= 2) {
         cadDescricao.setAttribute('style', "color: red");
-        cadDescricao.innerHTML = "Descrição* De 3 e 150 caracteres.";
+        cadDescricao.innerHTML = "Descrição* De 3 a 150 caracteres.";
         validaDescricao = false;
     }
 });
@@ -195,4 +195,4 @@ formulario.addEventListener("submit", () => {
     }
 });
 
-export { btnEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricaoInput, validaAdicionar, cadUrlInput, formulario };
+export { botaoEnviar, cadNomeInput, cadCodigoInput, cadTamanhoSelect, cadCorInput, cadPrecoInput, cadDescricaoInput, validaAdicionar, cadUrlInput, formulario };

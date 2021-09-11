@@ -1,7 +1,9 @@
 /* Botão modo noturno */
 
 .switch_container {
-    
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .switch {
@@ -21,10 +23,10 @@
 
 .switch-botao+label {
     padding: 2px;
-    width: 80px;
-    height: 40px;
+    width: 60px;
+    height: 30px;
     background-color: var(--text-color);
-    border-radius: 50px;
+    border-radius: 20px;
     transition: background 0.4s;
 }
 
@@ -42,7 +44,7 @@
     bottom: 2px;
     right: 2px;
     background-color: var(--text-color);
-    border-radius: 60px;
+    border-radius: 20px;
     transition: background 0.4s;
 }
 
@@ -61,6 +63,6 @@
 }
 
 .switch-botao:checked+label:after {
-    margin-left: 38px;
+    margin-left: 18px;
     background-color: var(--principal-background);
 }
