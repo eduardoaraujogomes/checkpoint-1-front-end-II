@@ -18,11 +18,11 @@ function priLetMai (texto){
     return retValor;
 }
 
-let guarNom = priLetMai(cadNomeInput.value)
-let guarCod = cadCodigoInput.value
+let guarNom = priLetMai(cadNomeInput)
+let guarCod = cadCodigoInput
 let guarTam = cadTamanhoSelect.value
-let guarCor = priLetMai(cadCorInput.value)
-let guarPre = cadPrecoInput.value
+let guarCor = priLetMai(cadCorInput)
+let guarPre = cadPrecoInput
 let guarUrl = cadUrlInput.value
 let guarDes = cadDescricaoInput.value.substring(0,1).toUpperCase().concat(cadDescricaoInput.value.substring(1))
 
