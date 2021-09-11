@@ -68,16 +68,22 @@
                     <label for="nomeProduto" class="cadNome">Nome do
                         Produto*</label>
                     <input type="text" class="cadNomeInput" placeholder=""
-                        maxlength="20" data-js="nome">
+                        data-js="nome" minlength="3"
+                        oninvalid="this.setCustomValidity('Digite um produto válido')"
+                        oninput="this.setCustomValidity('')" required autofocus>
 
                     <label for="codigoProduto" class="cadCodigo">Código do
                         Produto*</label>
                     <input type="text" class="cadCodigoInput" placeholder=""
-                        maxlength="10" data-js="codigo">
+                        minlength="3" maxlength="10" size="10" data-js="codigo"
+                        oninvalid="this.setCustomValidity('Digite um código entre 3 a 10 dígitos')"
+                        oninput="this.setCustomValidity('')" required>
 
                     <label for="tamanho" class="cadTamanho">Tamanho*</label>
-                    <select class="cadTamanhoSelect">
-                        <option value="emBranco">Defina um tamanho.</option>
+                    <select class="cadTamanhoSelect"
+                        oninvalid="this.setCustomValidity('Escolha uma opção')"
+                        oninput="this.setCustomValidity('')" required>
+                        <option value="">Defina um tamanho.</option>
                         <option value="PP">PP</option>
                         <option value="P">P</option>
                         <option value="M">M</option>
@@ -99,21 +105,30 @@
 
                     <label for="cor" class="cadCor">Cor*</label>
                     <input type="text" class="cadCorInput" placeholder=""
-                        maxlength="20" data-js="cor">
+                        maxlength="20" data-js="cor"
+                        oninvalid="this.setCustomValidity('Campo cor não pode ser vazio')"
+                        oninput="this.setCustomValidity('')" required>
 
                     <label for="preco" class="cadPreco">Preço*</label>
                     <input type="text" name="inputPreco" class="cadPrecoInput"
-                        placeholder="0,00" maxlength="10" data-js="preco">
+                        placeholder="0,00" maxlength="10" data-js="preco"
+                        oninvalid="this.setCustomValidity('Campo preço não pode ser vazio')"
+                        oninput="this.setCustomValidity('')" required>
 
                     <!-- ADIÇÃO DO CAMPO PARA A URL -->
-                    <label for="url" class="cadUrl">Url da Imagem*</label>
-                    <input type="url" class="cadUrlInput" required>
+                    <label for=" url" class="cadUrl">Url da Imagem*</label>
+                    <input type="url" data-js="url" class="cadUrlInput"
+                        oninvalid="this.setCustomValidity('Entre com uma URL válida')"
+                        oninput="this.setCustomValidity('')" required>
 
 
                     <label for="descricao"
                         class="cadDescricao">Descrição*</label>
                     <textarea name="descricao" id="cadDescricaoInput" cols="30"
-                        rows="10" maxlength="150"></textarea>
+                        rows="10" maxlength="150"
+                        oninvalid="this.setCustomValidity('Digite uma descrição para o produto')"
+                        oninput="this.setCustomValidity('')"
+                        required></textarea>
 
                     <button type="submit" id="botaoEnviar"
                         class="botao Enviar">Adicionar</button>
@@ -132,7 +147,7 @@
             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
             crossorigin="anonymous"></script>
 
-        <script src="/js/script.js" type="module"></script>
+        <script src="/js/validacoes.js" type="module"></script>
         <script src="/js/cards.js" type="module"></script>
         <script src="/js/dark-mode.js"></script>
     </body>

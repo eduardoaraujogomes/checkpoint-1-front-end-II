@@ -1,6 +1,16 @@
-import { formulario, cadCodigoInput, cadDescricaoInput, cadCorInput, cadNomeInput, cadPrecoInput, cadTamanhoSelect, validaAdicionar, cadUrlInput } from "./script.js";
+
 
 const cardsSection = document.getElementById("card-container");
+const formulario = document.getElementById("form");
+
+let produto = document.querySelector('.cadNomeInput');
+let codigo = document.querySelector('.cadCodigoInput');
+let tamanho = document.querySelector('.cadTamanhoSelect');
+let cor = document.querySelector('.cadCorInput');
+let preco = document.querySelector('.cadPrecoInput');
+let imagem = document.querySelector('.cadUrlInput');
+let descricao = document.querySelector('#cadDescricaoInput');
+
 
 //se tiver valores no localStorage ele pega esses valores, se não tiver, ele seta um array vazio.
 let listaProdutos = JSON.parse(localStorage.getItem("listaProduto") || '[]');
@@ -9,50 +19,29 @@ let listaProdutos = JSON.parse(localStorage.getItem("listaProduto") || '[]');
 formulario.addEventListener("submit", (event) => {
     //Tira o comportamento padrão do botão submit de atualizar a página
     event.preventDefault();
-    if (validaAdicionar) {
+    //Array de valores dos cards
+    listaProdutos.push(
+        {
+            nome: produto.value,
+            codigo: codigo.value,
+            tamanho: tamanho.value,
+            cor: cor.value,
+            preco: preco.value,
+            imagem: imagem.value,
+            descricao: descricao.value
+        }
+    );
 
-function priLetMai (texto){
-    const retValor = texto.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
-        return a.toUpperCase();
-    });
-    return retValor;
-}
-// function precoReais (texto){
-//     .replace(/(\d{1,3}(\.\d{3})*|\d+)(\,\d{2})?$/)
-//     return retValor;
-// }
+    //cria o card com os valores passado no formulário
+    criarCard(produto.value, codigo.value, tamanho.value, cor.value, preco.value, imagem.value, descricao.value);
 
-let guarNom = priLetMai(cadNomeInput)
-let guarCod = cadCodigoInput
-let guarTam = cadTamanhoSelect.value
-let guarCor = priLetMai(cadCorInput)
-let guarPre = cadPrecoInput.replace(/(\d)/)
-let guarUrl = cadUrlInput.value
-let guarDes = cadDescricaoInput.value.substring(0,1).toUpperCase().concat(cadDescricaoInput.value.substring(1))
-
-        //Array de valores dos cards
-        listaProdutos.push(
-            {
-                nome:guarNom,
-                codigo: guarCod,
-                tamanho: guarTam,
-                cor: guarCor,
-                preco: guarPre,
-                imagem: guarUrl,
-                descricao: guarDes
-            }
-        );
-
-        //cria o card com os valores passado no formulário
-        criarCard(guarNom, guarCod, guarTam, guarCor, guarPre, guarUrl, guarDes);
-
-        //Seta os valores do listaProdutos no localStorage
-        localStorage.setItem("listaProduto", JSON.stringify(listaProdutos));
+    //Seta os valores do listaProdutos no localStorage
+    localStorage.setItem("listaProduto", JSON.stringify(listaProdutos));
 
 
-        //Resetando os valores dentro do formulário
-        formulario.reset();
-    }
+    //Resetando os valores dentro do formulário
+    formulario.reset();
+
 });
 
 
@@ -65,8 +54,7 @@ function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
         <div class="card-div">
             <h3>${nome}</h3>
             <p>Tamanho ${tamanho}</p>
-            <span>Preço: ${ preco}</span>
-            <p class="descricao">${descricao}</p>
+            <span>Preço: ${preco}</span>
         </div>
         <div class="div-btn-circle">
             <button class="btn-circle">+</button>
@@ -77,8 +65,10 @@ function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
                 <img src="${imagem}"
                 alt="">
                 <h3>${nome}</h3>
+                <p>Código: ${codigo}</p>
                 <p>Tamanho ${tamanho}</p>
-                <span>Preço:${ preco}</span>
+                <p>Cor: ${cor}
+                <p>Preço:${preco}</p>
                 <p class ="descricao">Descrição: ${descricao}</p>
                 <button class="btn-deletar">Deletar Card</button>
             </div>
@@ -113,7 +103,7 @@ function modalsFunctions() {
 
     //Looping para poder pegar todos os nós dos modais criados
 
-    for (let i = 0; i < cards.length; i++) {
+    for (let i = 0;i < cards.length;i++) {
 
         let btnCircle = btnsCircle[i];
         let btnDeleter = btnsDeletar[i];
