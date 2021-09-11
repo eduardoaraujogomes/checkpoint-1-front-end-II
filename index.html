@@ -58,9 +58,7 @@
 
                 <label for="codigoProduto" class="cadCodigo">Código do
                     Produto*</label>
-                <input type="text" class="cadCodigoInput" placeholder=""  data-js="codigo">
-
-                <!-- min="1" -->
+                <input type="text" class="cadCodigoInput" placeholder=""  maxlength="10" data-js="codigo">
 
                 <label for="tamanho" class="cadTamanho">Tamanho*</label>
                 <select class="cadTamanhoSelect">
@@ -83,20 +81,16 @@
                     <option value="41">41</option>
                     <option value="42">42</option>
                 </select>
-                <!-- <input type="text" class="cadTamanhoInput" placeholder="" required> -->
 
                 <label for="cor" class="cadCor">Cor*</label>
                 <input type="text" class="cadCorInput" placeholder="" maxlength="20" data-js="cor">
 
                 <label for="preco" class="cadPreco">Preço*</label>
-                <input type="text" name="inputPreco" class="cadPrecoInput" placeholder="0,00"  data-js="preco">
-                
-                <!-- type="number" step="0.01" min="0.01" -->
+                <input type="text" name="inputPreco" class="cadPrecoInput" placeholder="0,00" maxlength="10" data-js="preco">
 
                 <!-- ADIÇÃO DO CAMPO PARA A URL -->
                 <label for="url" class="cadUrl">Url da Imagem*</label>
-                <input type="url" class="cadUrlInput">
-
+                <input type="url" class="cadUrlInput" required>
 
                 <label for="descricao" class="cadDescricao">Descrição*</label>
                 <textarea name="descricao" id="cadDescricaoInput" cols="30" rows="10" maxlength="150"></textarea>

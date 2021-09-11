@@ -17,12 +17,16 @@ function priLetMai (texto){
     });
     return retValor;
 }
+// function precoReais (texto){
+//     .replace(/(\d{1,3}(\.\d{3})*|\d+)(\,\d{2})?$/)
+//     return retValor;
+// }
 
 let guarNom = priLetMai(cadNomeInput)
 let guarCod = cadCodigoInput
 let guarTam = cadTamanhoSelect.value
 let guarCor = priLetMai(cadCorInput)
-let guarPre = cadPrecoInput
+let guarPre = cadPrecoInput.replace(/(\d)/)
 let guarUrl = cadUrlInput.value
 let guarDes = cadDescricaoInput.value.substring(0,1).toUpperCase().concat(cadDescricaoInput.value.substring(1))
 
@@ -61,7 +65,7 @@ function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
         <div class="card-div">
             <h3>${nome}</h3>
             <p>Tamanho ${tamanho}</p>
-            <span>Preço: R$${preco}</span>
+            <span>Preço: ${ preco}</span>
             <p class="descricao">${descricao}</p>
         </div>
         <div class="div-btn-circle">
@@ -74,7 +78,7 @@ function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
                 alt="">
                 <h3>${nome}</h3>
                 <p>Tamanho ${tamanho}</p>
-                <span>Preço: R$${preco}</span>
+                <span>Preço:${ preco}</span>
                 <p class ="descricao">Descrição: ${descricao}</p>
                 <button class="btn-deletar">Deletar Card</button>
             </div>
