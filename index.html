@@ -68,13 +68,16 @@
                     <label for="nomeProduto" class="cadNome">Nome do
                         Produto*</label>
                     <input type="text" class="cadNomeInput" placeholder=" "
-                        data-js="nome" minlength="3" required autofocus>
+                        data-js="nome" minlength="3"
+                        oninvalid="this.setCustomValidity('Digite um produto')"
+                        oninput="this.setCustomValidity('')" required autofocus>
 
                     <label for="codigoProduto" class="cadCodigo">Código do
                         Produto*</label>
                     <input type="text" class="cadCodigoInput" placeholder=" "
                         minlength="3" maxlength="10" size="10" data-js="codigo"
-                        required>
+                        oninvalid="this.setCustomValidity('Digite um código')"
+                        oninput="this.setCustomValidity('')" required>
 
                     <label for="tamanho" class="cadTamanho">Tamanho*</label>
                     <select class="cadTamanhoSelect"

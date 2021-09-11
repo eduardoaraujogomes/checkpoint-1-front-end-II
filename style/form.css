@@ -24,15 +24,11 @@ form {
       font-size: 1.0rem;
   }
 
-  input:optional, textarea:optional, select:optional {
-    border-color: var(--color-default);
-  }
+
   input:required:valid , textarea:required:valid, select:required:valid  {
     border-color: var(--color-valid);
   }
-  input:invalid , textarea:invalid, select:invalid {
-    border-color: var(--color-invalid);
-  }
+
   input:required:focus:valid, textarea:required:focus:valid, select:required:focus:valid {
     background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg") no-repeat 95% 50% lightgreen;
     background-size: 25px;
@@ -59,7 +55,7 @@ form textarea {
     border-radius: 0.2rem;
     margin-top: 0.5rem;
     resize: none;
-    font-size: 1.0rem;
+    font-size: 1.4rem;
 }
 
 .modo-noite input, textarea{

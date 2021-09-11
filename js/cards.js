@@ -1,5 +1,3 @@
-
-
 const cardsSection = document.getElementById("card-container");
 const formulario = document.getElementById("form");
 
@@ -25,7 +23,7 @@ formulario.addEventListener("submit", (event) => {
             nome: produto.value,
             codigo: codigo.value,
             tamanho: tamanho.value,
-            cor: cor.value,
+            cor: cor,
             preco: preco.value,
             imagem: imagem.value,
             descricao: descricao.value
@@ -66,9 +64,9 @@ function criarCard(nome, codigo, tamanho, cor, preco, imagem, descricao) {
                 alt="">
                 <h3>${nome}</h3>
                 <p>Código: ${codigo}</p>
-                <p>Tamanho ${tamanho}</p>
+                <p>Tamanho: ${tamanho}</p>
                 <p>Cor: ${cor}
-                <p>Preço:${preco}</p>
+                <p>Preço: ${preco}</p>
                 <p class ="descricao">Descrição: ${descricao}</p>
                 <button class="btn-deletar">Deletar Card</button>
             </div>
