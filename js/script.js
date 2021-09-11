@@ -48,12 +48,12 @@ const masks = {
         return cadNomeInput = value;
     },
     codigo(value) {
-        if (value.length <= 2 || value.length > 10) {
+        if (value.length <= 2) {
             cadCodigo.setAttribute('style', "color: red");
             cadCodigo.innerHTML = "Código do Produto* De 3 e 10 digitos.";
             validaCodigo = false;
         }
-        if (value.length > 2 && value.length < 11) {
+        if (value.length > 2) {
             cadCodigo.setAttribute('style', "color: green");
             cadCodigo.innerHTML = "Código do Produto*";
             validaCodigo = true;
@@ -89,7 +89,6 @@ const masks = {
         const cleanValue = +value.replace(/\D+/g, '');
         const options = { style: 'currency', currency: 'BRL' };
         return new Intl.NumberFormat('pt-br', options).format(cleanValue / 100);
-
     }
 };
 
@@ -100,44 +99,6 @@ document.querySelectorAll('input').forEach(($input) => {
         e.target.value = masks[field](e.target.value);
     }, false);
 });
-
-
-
-
-
-//validando campo nome.
-// cadNomeInput.addEventListener("focusout", () => {
-//     if (cadNomeInput.value.length <= 2) {
-//         cadNome.setAttribute('style', "color: red");
-//         cadNome.innerHTML = "Nome do Produto* De 3 e 20 caracteres.";
-//         validaNome = false;
-//     }
-// });
-
-// cadNomeInput.addEventListener("keyup", () => {
-//     if (cadNomeInput.value.length > 2) {
-//         cadNome.setAttribute('style', "color: green");
-//         cadNome.innerHTML = "Nome do Produto*";
-//         validaNome = true;
-//     }
-// });
-
-//validando campo codigo.
-// cadCodigoInput.addEventListener("focusout", () => {
-//     if (cadCodigoInput.value.length <= 2 || cadCodigoInput.value.length > 10) {
-//         cadCodigo.setAttribute('style', "color: red");
-//         cadCodigo.innerHTML = "Código do Produto* De 3 e 10 digitos.";
-//         validaCodigo = false;
-//     }
-// });
-
-// cadCodigoInput.addEventListener("keyup", () => {
-//     if (cadCodigoInput.value.length > 2 && cadCodigoInput.value.length < 11) {
-//         cadCodigo.setAttribute('style', "color: green");
-//         cadCodigo.innerHTML = "Código do Produto*";
-//         validaCodigo = true;
-//     }
-// });
 
 //validando campo tamanho.
 cadTamanhoSelect.addEventListener("focusout", () => {
@@ -163,40 +124,6 @@ cadTamanhoSelect.addEventListener("click", () => {
         validaTamanho = true;
     }
 });
-
-// //validando campo cor.
-// cadCorInput.addEventListener("focusout", () => {
-//     if (cadCorInput.value.length <= 2) {
-//         cadCor.setAttribute('style', "color: red");
-//         cadCor.innerHTML = "Cor* De 3 e 20 caracteres.";
-//         validaCor = false;
-//     }
-// });
-
-// cadCorInput.addEventListener("keyup", () => {
-//     if (cadCorInput.value.length > 2) {
-//         cadCor.setAttribute('style', "color: green");
-//         cadCor.innerHTML = "Cor*";
-//         validaCor = true;
-//     }
-// });
-
-//validando campo preço.
-// cadPrecoInput.addEventListener("focusout", () => {
-//     if (cadPrecoInput.value.length <= 2 ||cadPrecoInput.value.length > 10) {
-//         cadPreco.setAttribute('style', "color: red");
-//         cadPreco.innerHTML = "Preço* De 3 e 10 digitos.";
-//         validaPreco = false;
-//     }
-// });
-
-// cadPrecoInput.addEventListener("keyup", () => {
-//     if (cadPrecoInput.value.length > 2 && cadPrecoInput.value.length < 11) {
-//         cadPreco.setAttribute('style', "color: green");
-//         cadPreco.innerHTML = "Preço*";
-//         validaPreco = true;
-//     }
-// });
 
 //validando campo descrição.
 cadDescricaoInput.addEventListener("focusout", () => {
@@ -244,15 +171,11 @@ formulario.addEventListener("submit", () => {
     } else {
         validaAdicionar = false;
 
-        //Da foco em todos os inputs para ativar as validação.
-        // cadNomeInput.focus();
-        // cadCodigoInput.focus();
+
         cadTamanhoSelect.focus();
-        // cadCorInput.focus();
-        // cadPrecoInput.focus();
         cadUrlInput.focus();
         cadDescricaoInput.focus();
-        // cadNomeInput.focus();
+
     }
 });
 
