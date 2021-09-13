@@ -1,4 +1,11 @@
 # Checkpoint I - Front end II
+## Grupo
+- [Eduardo de Araújo](https://github.com/eduardoaraujogomes)
+- [Fernando Carvalho]
+- [Paula Augusto]()
+- [Silvano Araujo](https://github.com/Silvanoeng)
+- [Stefany Lovato](https://github.com/stefanylovato)
+
 ## Objetivo
 	
 - O tema da aplicação é de sua preferência. Pode ser sobre carros, animes, cidades ou outro tema. 
