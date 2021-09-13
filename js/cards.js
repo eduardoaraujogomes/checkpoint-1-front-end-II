@@ -23,7 +23,7 @@ formulario.addEventListener("submit", (event) => {
             nome: produto.value,
             codigo: codigo.value,
             tamanho: tamanho.value,
-            cor: cor,
+            cor: cor.value,
             preco: preco.value,
             imagem: imagem.value,
             descricao: descricao.value
