@@ -1,7 +1,7 @@
 # Checkpoint I - Front end II
 ## Grupo
 - [Eduardo de Araújo](https://github.com/eduardoaraujogomes)
-- Fernando Carvalho
+- [Fernando Carvalho](https://github.com/Fer96carvalho)
 - [Paula Augusto](https://github.com/pcamposaugusto)
 - [Silvano Araujo](https://github.com/Silvanoeng)
 - [Stefany Lovato](https://github.com/stefanylovato)
