@@ -30,4 +30,4 @@
 ![](https://i.imgur.com/G9HXdxT.jpg)
 
 ## Projeto
-- Para acessar o projeto, basta clicar no link: [Link do Projeto](https://eduardoaraujogomes.github.io/checkpoint1-front2/)
+- Para acessar o projeto, basta clicar no link: [Link do Projeto](https://eduardoaraujogomes.github.io/checkpoint-1-front-end-II/)
